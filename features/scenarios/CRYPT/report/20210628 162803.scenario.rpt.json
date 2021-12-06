@@ -1,0 +1,102 @@
+{
+    "id": "CRYPT.01.SC.00",
+    "name": "GEDI_CRYPT_RSA",
+    "description": "Realiza uma operacao de encryptacao RSA",
+    "is_loop": false,
+    "loop_count": 0,
+    "git_version": {
+        "message": "Your branch is up to date with 'origin/qa'.",
+        "remote_repository": {
+            "url": "git@gitlab.com:itriad-systems/gertec/tap-on-phone/padawan_scripts.git",
+            "username": "thatianne.maruyama",
+            "hash": "29fcf9d740a11dc67857c6d0802904f72152f3b5",
+            "date": "2021-06-28 08:59:27-04:00"
+        },
+        "local_repository": {
+            "path": "D:/Tap on Phone/padawan_scripts",
+            "hash": "29fcf9d740a11dc67857c6d0802904f72152f3b5",
+            "date": "2021-06-28 08:59:27-04:00",
+            "is_updated": true,
+            "is_modified": true
+        }
+    },
+    "start_time": "2021-06-28 16:27:02.437575",
+    "end_time": "2021-06-28 16:28:03.799005",
+    "elapsed_time": "0:01:01.361430",
+    "result": "Not executed",
+    "step": [
+        {
+            "id": "CRYPT.01.SC.00.ST.01",
+            "name": "STEP 00 - GEDI CRYPT RSA",
+            "description": "",
+            "cmd_id": "059",
+            "is_loop": false,
+            "loop_count": 1,
+            "loop_sleep": 1,
+            "user_confirm": false,
+            "start_time": "2021-06-28 16:27:02.438574",
+            "end_time": "2021-06-28 16:28:03.799005",
+            "elapsed_time": "0:01:01.360431",
+            "result": "Not executed",
+            "expected_result": "GEDI_RET_OK",
+            "params": [
+                {
+                    "name": "abModulus",
+                    "value_in": "BF9EA8BC91D9424DB3FCAC839E48368FEF1A0AAD445AE0165DBDCA673F9022A220A1570A31C491BDAEAFB00DE0FD426BCD68A087BF2AABFFC28467885715354B7D6737EF17A1B6AEEC3AA5D759F68B9902FF8D614AEDF0251A4015348E918C59A6A65CA9AB5A9F90744F8DFF3838C8543BA5271C08EC79D07941629F31BA1791",
+                    "value_out": "0",
+                    "type": "IN",
+                    "use_regex": false,
+                    "value_in_input_manual": false,
+                    "value_out_input_manual": false
+                },
+                {
+                    "name": "uiModulusLen",
+                    "value_in": "128",
+                    "value_out": "0",
+                    "type": "IN",
+                    "use_regex": false,
+                    "value_in_input_manual": false,
+                    "value_out_input_manual": false
+                },
+                {
+                    "name": "abExponent",
+                    "value_in": "17",
+                    "value_out": "0",
+                    "type": "IN",
+                    "use_regex": false,
+                    "value_in_input_manual": false,
+                    "value_out_input_manual": false
+                },
+                {
+                    "name": "uiExponentLen",
+                    "value_in": "1",
+                    "value_out": "0",
+                    "type": "IN",
+                    "use_regex": false,
+                    "value_in_input_manual": false,
+                    "value_out_input_manual": false
+                },
+                {
+                    "name": "abData",
+                    "value_in": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "value_out": "0",
+                    "type": "IN",
+                    "use_regex": false,
+                    "value_in_input_manual": false,
+                    "value_out_input_manual": false
+                },
+                {
+                    "name": "abResult",
+                    "value_in": "0",
+                    "value_out": "3576BE31EB69C037907B2E49F124A89FA72182619E7B8A0043A055F4E826F61DA4E6B9A218A0165CA9C129CFC544F33CB6098453210F3843C63C1863E5FFD5EC24BEAACE6B618C4AAE1EF93D6431F1A648FA6990BD676E0130629FB785BEEECAC4ABFD8DE529F30AA1CA6EE61737509723FCACCB63B522D528A83306B11FF011",
+                    "type": "OUT",
+                    "use_regex": false,
+                    "value_in_input_manual": false,
+                    "value_out_input_manual": false
+                }
+            ],
+            "execution_detail": "Serial communication lost.",
+            "problem_status": "RESULT: NOT EXECUTED OR CAN NOT DECODE GEDI RESPONSE"
+        }
+    ]
+}

@@ -1,0 +1,131 @@
+{
+    "id": "ICRYPT_RSA_GENERATE_KEY",
+    "name": "ICRYPT_RSA_GENERATE_KEY.scenario",
+    "description": "It generates RSA public key",
+    "flags": ["SWP", "TEE"],
+    "steps": [
+        {
+            "id": "1_ICRYPT_RSA_GENERATE_KEY",
+            "name": "1 CRYPT RSA PUBLIC KEY GENERATOR",
+            "user_confirm": false,
+            "is_loop": false,
+            "loop_count": 0,
+            "loop_sleep": 0,
+            "description": "It generates RSA public key with 2048-bit key length",
+            "cmd_id": "ICRYPT_RSA_GENERATE_KEY",
+            "result": "GEDI_RET_OK",
+            "params": [
+                {
+                    "name": "uiKeyIndex",
+                    "value_in": "1",
+                    "value_out": "0",
+                    "type": "IN",
+                    "use_regex": false
+                },
+                {
+                    "name": "uiKeyBits",
+                    "value_in": "2048",
+                    "value_out": "0",
+                    "type": "IN",
+                    "use_regex": false
+                },
+                {
+                    "name": "abExp",
+                    "value_in": "010001",
+                    "value_out": "010001",
+                    "type": "IN/OUT",
+                    "use_regex": false
+                },
+                {
+                    "name": "abResult",
+                    "value_in": "0",
+                    "value_out": "[0-9A-Z]*",
+                    "type": "OUT",
+                    "use_regex": true
+                }
+            ]
+        },
+        {
+            "id": "2_ICRYPT_RSA_GENERATE_KEYR",
+            "name": "2 CRYPT RSA PUBLIC KEY GENERATOR",
+            "user_confirm": false,
+            "is_loop": false,
+            "loop_count": 0,
+            "loop_sleep": 0,
+            "description": "It generates RSA public key with 3072-bit key length",
+            "cmd_id": "ICRYPT_RSA_GENERATE_KEY",
+            "result": "GEDI_RET_OK",
+            "params": [
+                {
+                    "name": "uiKeyIndex",
+                    "value_in": "1",
+                    "value_out": "0",
+                    "type": "IN",
+                    "use_regex": false
+                },
+                {
+                    "name": "uiKeyBits",
+                    "value_in": "3072",
+                    "value_out": "0",
+                    "type": "IN",
+                    "use_regex": false
+                },
+                {
+                    "name": "abExp",
+                    "value_in": "010001",
+                    "value_out": "010001",
+                    "type": "IN/OUT",
+                    "use_regex": false
+                },
+                {
+                    "name": "abResult",
+                    "value_in": "0",
+                    "value_out": "[0-9A-Z]*",
+                    "type": "OUT",
+                    "use_regex": true
+                }
+            ]
+        },
+        {
+            "id": "3_ICRYPT_RSA_GENERATE_KEY",
+            "name": "3 CRYPT RSA PUBLIC KEY GENERATOR",
+            "user_confirm": false,
+            "is_loop": false,
+            "loop_count": 0,
+            "loop_sleep": 0,
+            "description": "It generates RSA public key with 4096-bit key length",
+            "cmd_id": "ICRYPT_RSA_GENERATE_KEY",
+            "result": "GEDI_RET_OK",
+            "params": [
+                {
+                    "name": "uiKeyIndex",
+                    "value_in": "1",
+                    "value_out": "0",
+                    "type": "IN",
+                    "use_regex": false
+                },
+                {
+                    "name": "uiKeyBits",
+                    "value_in": "4096",
+                    "value_out": "0",
+                    "type": "IN",
+                    "use_regex": false
+                },
+                {
+                    "name": "abExp",
+                    "value_in": "010001",
+                    "value_out": "010001",
+                    "type": "IN/OUT",
+                    "use_regex": false
+                },
+                {
+                    "name": "abResult",
+                    "value_in": "0",
+                    "value_out": "[0-9A-Z]*",
+                    "type": "OUT",
+                    "use_regex": true
+                }
+            ]
+        }
+    ]
+}

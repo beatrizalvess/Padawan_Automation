@@ -1,0 +1,143 @@
+{
+    "id": "ICRYPT_SHA1",
+    "description": "It executes an operation of SHA1 encryption",
+    "name": "ICRYPT_SHA1.scenario",
+    "flags": ["SWP", "TEE"],
+    "steps": [
+        {
+            "id": "1_ICRYPT_SHA1",
+            "name": "1 ICRYPT_SHA1",
+            "user_confirm": false,
+            "is_loop": false,
+            "loop_count": 0,
+            "loop_sleep": 0,
+            "description": "It executes an operation of SHA1 encryption with 16-bit message",
+            "cmd_id": "ICRYPT_SHA1",
+            "result": "GEDI_RET_OK",
+            "params": [
+                {
+                    "name": "abData",
+                    "value_in": "1234567890ABCDEF",
+                    "value_out": "0",
+                    "type": "IN",
+                    "use_regex": false
+                },
+                {
+                    "name": "abResult",
+                    "value_in": "0",
+                    "value_out": "699FB291AF1B60327B8807FDCF384191B0AFB631",
+                    "type": "OUT",
+                    "use_regex": false
+                }
+            ]
+        },
+        {
+            "id": "2_ICRYPT_SHA1",
+            "name": "2 ICRYPT_SHA1",
+            "user_confirm": false,
+            "is_loop": false,
+            "loop_count": 0,
+            "loop_sleep": 0,
+            "description": "It executes an operation of SHA1 encryption with 32-bit message",
+            "cmd_id": "ICRYPT_SHA1",
+            "result": "GEDI_RET_OK",
+            "params": [
+                {
+                    "name": "abData",
+                    "value_in": "1234567890ABCDEF1234567890ABCDEF",
+                    "value_out": "0",
+                    "type": "IN",
+                    "use_regex": false
+                },
+                {
+                    "name": "abResult",
+                    "value_in": "0",
+                    "value_out": "620A3115699A422BD874DE31D3E6911C583A7675",
+                    "type": "OUT",
+                    "use_regex": false
+                }
+            ]
+        },
+        {
+            "id": "3_ICRYPT_SHA1",
+            "name": "3 ICRYPT_SHA1",
+            "user_confirm": false,
+            "is_loop": false,
+            "loop_count": 0,
+            "loop_sleep": 0,
+            "description": "It executes an operation of SHA1 encryption with 64-bit message",
+            "cmd_id": "ICRYPT_SHA1",
+            "result": "GEDI_RET_OK",
+            "params": [
+                {
+                    "name": "abData",
+                    "value_in": "1234567890ABCDEF1234567890ABCDEF1234567890ABCDEF1234567890ABCDEF",
+                    "value_out": "0",
+                    "type": "IN",
+                    "use_regex": false
+                },
+                {
+                    "name": "abResult",
+                    "value_in": "0",
+                    "value_out": "E8CF7EE20CFB986CFF4129A4E4F8B95104892071",
+                    "type": "OUT",
+                    "use_regex": false
+                }
+            ]
+        },
+        {
+            "id": "4_ICRYPT_SHA1",
+            "name": "4 ICRYPT_SHA1",
+            "user_confirm": false,
+            "is_loop": false,
+            "loop_count": 0,
+            "loop_sleep": 0,
+            "description": "It executes an operation of SHA1 encryption with 128-bit message",
+            "cmd_id": "ICRYPT_SHA1",
+            "result": "GEDI_RET_OK",
+            "params": [
+                {
+                    "name": "abData",
+                    "value_in": "1234567890ABCDEF1234567890ABCDEF1234567890ABCDEF1234567890ABCDEF1234567890ABCDEF1234567890ABCDEF1234567890ABCDEF1234567890ABCDEF",
+                    "value_out": "0",
+                    "type": "IN",
+                    "use_regex": false
+                },
+                {
+                    "name": "abResult",
+                    "value_in": "0",
+                    "value_out": "C41044C7CB672221FB07FEB756FA60E06292BA8A",
+                    "type": "OUT",
+                    "use_regex": false
+                }
+            ]
+        },
+        {
+            "id": "5_ICRYPT_SHA1",
+            "name": "5 ICRYPT_SHA1",
+            "user_confirm": false,
+            "is_loop": false,
+            "loop_count": 0,
+            "loop_sleep": 0,
+            "description": "It executes an operation of SHA1 encryption with 256-bit message",
+            "cmd_id": "ICRYPT_SHA1",
+            "result": "GEDI_RET_OK",
+            "params": [
+                {
+                    "name": "abData",
+                    "value_in": "1234567890ABCDEF1234567890ABCDEF1234567890ABCDEF1234567890ABCDEF1234567890ABCDEF1234567890ABCDEF1234567890ABCDEF1234567890ABCDEF1234567890ABCDEF1234567890ABCDEF1234567890ABCDEF1234567890ABCDEF1234567890ABCDEF1234567890ABCDEF1234567890ABCDEF1234567890ABCDEF",
+                    "value_out": "0",
+                    "type": "IN",
+                    "use_regex": false
+                },
+                {
+                    "name": "abResult",
+                    "value_in": "0",
+                    "value_out": "6D52794905C68C632154ED129C9B05D6F9588FD3",
+                    "type": "OUT",
+                    "use_regex": false
+                }
+            ]
+        }
+    ]
+}

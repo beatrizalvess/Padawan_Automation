@@ -1,0 +1,172 @@
+{
+  "id": "KeyPresenceTest_1min",
+  "name": "Key Presence Test - 1 minute",
+  "description": "It checks if the key is deleted after a minute in the safe storage",
+  "flags": ["SWP", "TEE"],
+  "steps": [
+    {
+      "id": "01-KeyPresenceTest_1min",
+      "name": "01 RSA Generate Key",
+      "user_confirm": false,
+      "is_loop": false,
+      "loop_count": 0,
+      "loop_sleep": 0,
+      "description": "It generates RSA public key",
+      "cmd_id": "ICRYPT_RSA_GENERATE_KEY",
+      "result": "GEDI_RET_OK",
+      "params": [
+        {
+          "name": "uiKeyIndex",
+          "value_in": "1",
+          "value_out": "0",
+          "type": "IN",
+          "use_regex": false
+        },
+        {
+          "name": "uiKeyBits",
+          "value_in": "2048",
+          "value_out": "0",
+          "type": "IN",
+          "use_regex": false
+        },
+        {
+          "name": "abExp",
+          "value_in": "",
+          "value_out": "&RsaExp",
+          "type": "IN/OUT",
+          "use_regex": false
+        },
+        {
+          "name": "abResult",
+          "value_in": "0",
+          "value_out": "&RsaMod",
+          "type": "OUT",
+          "use_regex": false
+        }
+      ]
+    },
+    {
+      "id": "02-KeyPresenceTest_1min",
+      "name": "02 RSA Encrypt",
+      "description": "It encrypts data using the RSA public generated key",
+      "user_confirm": false,
+      "is_loop": false,
+      "loop_count": 0,
+      "loop_sleep": 0,
+      "cmd_id": "ICRYPT_RSA",
+      "result": "GEDI_RET_OK",
+      "params": [
+        {
+          "name": "abModulus",
+          "value_in": "&RsaMod",
+		      "value_out": "0",
+          "type": "IN",
+          "use_regex": false
+        },
+        {
+          "name": "abExponent",
+          "value_in": "&RsaExp",
+		      "value_out": "0",
+          "type": "IN",
+          "use_regex": false
+        },
+        {
+          "name": "abData",
+          "value_in": "01234567890123456789012345678901",
+		      "value_out": "0",
+          "type": "IN",
+          "use_regex": false
+        },
+        {
+          "name": "abResult",
+		      "value_in": "0",
+          "value_out": "&abRsaResult",
+          "type": "OUT",
+          "use_regex": false
+        }
+      ]
+    },
+    {
+      "id": "03-KeyPresenceTest_1min",
+      "name": "03 Save Encrypted Key",
+      "user_confirm": false,
+      "is_loop": false,
+      "loop_count": 0,
+      "loop_sleep": 0,
+      "description": "It saves a encrypted Key",
+      "cmd_id": "IKMS_SaveEncryptedKey",
+      "result": "GEDI_RET_OK",
+      "params": [
+        {
+          "name": "eKeyType",
+          "value_in": "4",
+          "value_out": "",
+          "type": "IN",
+          "use_regex": false
+        },
+        {
+          "name": "eKeyPurpose",
+          "value_in": "1",
+          "value_out": "",
+          "type": "IN",
+          "use_regex": false
+        },
+        {
+          "name": "uiKeyIndex",
+          "value_in": "1",
+          "value_out": "",
+          "type": "IN",
+          "use_regex": false
+        },
+        {
+          "name": "abKey",
+          "value_in": "&abRsaResult",
+          "value_out": "",
+          "type": "IN",
+          "use_regex": false
+        },
+        {
+          "name": "uiRSAkeyIndex",
+          "value_in": "1",
+          "value_out": "",
+          "type": "IN",
+          "use_regex": false
+        }
+      ]
+    },
+    {
+      "id": "04-KeyPresenceTest_1min",
+      "name": "04 Key Presence Test",
+      "user_confirm": false,
+      "is_loop": true,
+      "loop_count": 6,
+      "loop_sleep": 11,
+      "description": "It checks key presence",
+      "cmd_id": "IKMS_KeyPresenceTest",
+      "result": "GEDI_RET_TEST_FAIL",
+      "params": [
+        {
+          "name": "eKeyType",
+          "value_in": "4",
+          "value_out": "",
+          "type": "IN",
+          "use_regex": false
+        },
+        {
+          "name": "eKeyPurpose",
+          "value_in": "1",
+          "value_out": "",
+          "type": "IN",
+          "use_regex": false
+        },
+        {
+          "name": "uiKeyIndex",
+          "value_in": "1",
+          "value_out": "",
+          "type": "IN",
+          "use_regex": false
+        }
+      ]
+    }
+  ]
+}

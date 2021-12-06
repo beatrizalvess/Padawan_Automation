@@ -1,0 +1,197 @@
+{
+    "id": "ICRYPT_RNG",
+    "description": "It generates random numbers",
+    "name": "ICRYPT_RNG.scenario",
+    "flags": ["SWP", "TEE"],
+    "steps": [
+        {
+            "id": "1_CRYPT_RANDOM_NUMBER_GENERATOR",
+            "name": "1 CRYPT RANDOM NUMBER GENERATOR",
+            "user_confirm": false,
+            "is_loop": false,
+            "loop_count": 0,
+            "loop_sleep": 0,
+            "description": "It generates random numbers with 8 bytes length",
+            "cmd_id": "ICRYPT_RNG",
+            "result": "GEDI_RET_OK",
+            "params": [
+                {
+                    "name": "uiLen",
+                    "value_in": "8",
+                    "value_out": "0",
+                    "type": "IN",
+                    "use_regex": false
+                },
+                {
+                    "name": "abResult",
+                    "value_in": "0",
+                    "value_out": "[0-9A-Z]*",
+                    "type": "OUT",
+                    "use_regex": true
+                }
+            ]
+        },
+        {
+            "id": "2_CRYPT_RANDOM_NUMBER_GENERATOR",
+            "name": "2 CRYPT RANDOM NUMBER GENERATOR",
+            "user_confirm": false,
+            "is_loop": false,
+            "loop_count": 0,
+            "loop_sleep": 0,
+            "description": "It generates random numbers with 16 bytes length",
+            "cmd_id": "ICRYPT_RNG",
+            "result": "GEDI_RET_OK",
+            "params": [
+                {
+                    "name": "uiLen",
+                    "value_in": "16",
+                    "value_out": "0",
+                    "type": "IN",
+                    "use_regex": false
+                },
+                {
+                    "name": "abResult",
+                    "value_in": "0",
+                    "value_out": "[0-9A-Z]*",
+                    "type": "OUT",
+                    "use_regex": true
+                }
+            ]
+        },
+        {
+            "id": "3_CRYPT_RANDOM_NUMBER_GENERATOR",
+            "name": "3 CRYPT RANDOM NUMBER GENERATOR",
+            "user_confirm": false,
+            "is_loop": false,
+            "loop_count": 0,
+            "loop_sleep": 0,
+            "description": "It generates random numbers with 32 bytes length",
+            "cmd_id": "ICRYPT_RNG",
+            "result": "GEDI_RET_OK",
+            "params": [
+                {
+                    "name": "uiLen",
+                    "value_in": "32",
+                    "value_out": "0",
+                    "type": "IN",
+                    "use_regex": false
+                },
+                {
+                    "name": "abResult",
+                    "value_in": "0",
+                    "value_out": "[0-9A-Z]*",
+                    "type": "OUT",
+                    "use_regex": true
+                }
+            ]
+        },
+        {
+            "id": "4_CRYPT_RANDOM_NUMBER_GENERATOR",
+            "name": "4 CRYPT RANDOM NUMBER GENERATOR",
+            "user_confirm": false,
+            "is_loop": false,
+            "loop_count": 0,
+            "loop_sleep": 0,
+            "description": "It generates random numbers with 64 bytes length",
+            "cmd_id": "ICRYPT_RNG",
+            "result": "GEDI_RET_OK",
+            "params": [
+                {
+                    "name": "uiLen",
+                    "value_in": "64",
+                    "value_out": "0",
+                    "type": "IN",
+                    "use_regex": false
+                },
+                {
+                    "name": "abResult",
+                    "value_in": "0",
+                    "value_out": "[0-9A-Z]*",
+                    "type": "OUT",
+                    "use_regex": true
+                }
+            ]
+        },
+        {
+            "id": "5_CRYPT_RANDOM_NUMBER_GENERATOR",
+            "name": "5 CRYPT RANDOM NUMBER GENERATOR",
+            "user_confirm": false,
+            "is_loop": false,
+            "loop_count": 0,
+            "loop_sleep": 0,
+            "description": "It generates random numbers with 128 bytes length",
+            "cmd_id": "ICRYPT_RNG",
+            "result": "GEDI_RET_OK",
+            "params": [
+                {
+                    "name": "uiLen",
+                    "value_in": "128",
+                    "value_out": "0",
+                    "type": "IN",
+                    "use_regex": false
+                },
+                {
+                    "name": "abResult",
+                    "value_in": "0",
+                    "value_out": "[0-9A-Z]*",
+                    "type": "OUT",
+                    "use_regex": true
+                }
+            ]
+        },
+        {
+            "id": "6_CRYPT_RANDOM_NUMBER_GENERATOR",
+            "name": "6 CRYPT RANDOM NUMBER GENERATOR",
+            "user_confirm": false,
+            "is_loop": false,
+            "loop_count": 0,
+            "loop_sleep": 0,
+            "description": "It generates random numbers with 192 bytes length",
+            "cmd_id": "ICRYPT_RNG",
+            "result": "GEDI_RET_OK",
+            "params": [
+                {
+                    "name": "uiLen",
+                    "value_in": "192",
+                    "value_out": "0",
+                    "type": "IN",
+                    "use_regex": false
+                },
+                {
+                    "name": "abResult",
+                    "value_in": "0",
+                    "value_out": "[0-9A-Z]*",
+                    "type": "OUT",
+                    "use_regex": true
+                }
+            ]
+        },
+        {
+            "id": "7_CRYPT_RANDOM_NUMBER_GENERATOR",
+            "name": "7 CRYPT RANDOM NUMBER GENERATOR",
+            "user_confirm": false,
+            "is_loop": false,
+            "loop_count": 0,
+            "loop_sleep": 0,
+            "description": "It generates random numbers with 256 bytes length",
+            "cmd_id": "ICRYPT_RNG",
+            "result": "GEDI_RET_OK",
+            "params": [
+                {
+                    "name": "uiLen",
+                    "value_in": "256",
+                    "value_out": "0",
+                    "type": "IN",
+                    "use_regex": false
+                },
+                {
+                    "name": "abResult",
+                    "value_in": "0",
+                    "value_out": "[0-9A-Z]*",
+                    "type": "OUT",
+                    "use_regex": true
+                }
+            ]
+        }
+    ]
+}

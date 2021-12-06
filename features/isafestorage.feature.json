@@ -1,0 +1,14 @@
+{
+  "id": "SAFESTORAGE",
+  "name": "safestorage.feature",
+  "description": "Features related to SAFESTORAGE",
+  "flags": ["TEE", "SWP"],
+  "scenarios": 
+  [
+  {"path": "scenarios/SAFESTORAGE/ISAFESTORAGE_base.scenario.json"},
+	{"path": "scenarios/SAFESTORAGE/ISAFESTORAGE_FULL.scenario.json"},
+  {"path": "scenarios/SAFESTORAGE/ISAFESTORAGE_CargaEMemoria.scenario.json"},
+  {"path": "scenarios/SAFESTORAGE/ISAFESTORAGE_MESMO_ARQUIVO.scenario.json"}
+  ]  
+}
+  

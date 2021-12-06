@@ -1,0 +1,20 @@
+{
+    "id": "REGRESSAO_FULL",
+    "name": "MOBILE_CRYPT.project",
+    "description": "GEDI Regression Test for Crypt Feature",
+    "override_user_confirm": false,
+    "scripts": [
+        {
+            "id": "CRIPTOGRAFIA",
+            "name": "MOBILE_CRYPT",
+            "description": "Script to cover CRYPT interface's functions",
+            "break_setup": false,
+            "break_message": "",
+            "features": [
+                {
+                    "path": "features/icrypt.feature.json"
+                }
+            ]
+        }
+    ]
+}

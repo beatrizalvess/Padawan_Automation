@@ -1,0 +1,97 @@
+{
+    "id": "SEK384bitsAES",
+    "name": "SEK384bitsAES.scenario",
+    "description": "It saves encrypted Key",
+    "flags": ["SWP", "TEE"],
+    "steps": [
+        {
+            "id": "01-SEK384bitsAES",
+            "name": "1 CRYPT RSA PUBLIC KEY GENERATOR",
+            "user_confirm": false,
+            "is_loop": false,
+            "loop_count": 0,
+            "loop_sleep": 0,
+            "description": "It generates RSA public key with 3072-bit key length",
+            "cmd_id": "ICRYPT_RSA_GENERATE_KEY",
+            "result": "GEDI_RET_OK",
+            "params": [
+                {
+                    "name": "uiKeyIndex",
+                    "value_in": "1",
+                    "value_out": "0",
+                    "type": "IN",
+                    "use_regex": false
+                },
+                {
+                    "name": "uiKeyBits",
+                    "value_in": "3072",
+                    "value_out": "0",
+                    "type": "IN",
+                    "use_regex": false
+                },
+                {
+                    "name": "abExp",
+                    "value_in": "010001",
+                    "value_out": "010001",
+                    "type": "IN/OUT",
+                    "use_regex": false
+                },
+                {
+                    "name": "abResult",
+                    "value_in": "0",
+                    "value_out": "&abResult",
+                    "type": "OUT",
+                    "use_regex": false
+                }
+            ]
+        },
+        {
+            "id": "02-SEK384bitsAES",
+            "name": "02 SAVE RSA ENCRYPTED KEY GENERATED",
+            "user_confirm": false,
+            "is_loop": false,
+            "loop_count": 0,
+            "loop_sleep": 0,
+            "description": "It saves the RSA generated Key by encrypting using AES",
+            "cmd_id": "IKMS_SaveEncryptedKey",
+            "result": "GEDI_RET_OK",
+            "params": [
+                {
+                    "name": "eKeyType",
+                    "value_in": "4",
+                    "value_out": "",
+                    "type": "IN",
+                    "use_regex": false
+                },
+                {
+                    "name": "eKeyPurpose",
+                    "value_in": "1",
+                    "value_out": "",
+                    "type": "IN",
+                    "use_regex": false
+                },
+                {
+                    "name": "uiKeyIndex",
+                    "value_in": "1",
+                    "value_out": "",
+                    "type": "IN",
+                    "use_regex": false
+                },
+                {
+                    "name": "abKey",
+                    "value_in": "&abResult",
+                    "value_out": "",
+                    "type": "IN",
+                    "use_regex": false
+                },
+                {
+                    "name": "uiKSN",
+                    "value_in": "0",
+                    "value_out": "",
+                    "type": "IN",
+                    "use_regex": false
+                }
+            ]
+        }
+    ]
+}

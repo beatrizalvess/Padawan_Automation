@@ -1,0 +1,49 @@
+{
+  "id": "ICRYPT_DES_Encrypt_TDES_FullLenght",
+  "description": "It executes encryption operation to DES",
+  "name": "ICRYPT_DES_Encrypt_TDES_FullLenght.scenario",
+  "flags": ["SWP", "TEE"],
+  "steps": [
+    {
+      "id": "1-ICRYPT_DES_Encrypt_TDES_FullLenght",
+      "name": "1 CRYPT DES",
+      "user_confirm": false,
+      "is_loop": false,
+      "loop_count": 0,
+      "loop_sleep": 0,
+      "description": "Check system behavior with incorrect keys for DES.",
+      "cmd_id": "ICRYPT_DES",
+      "result": "GEDI_RET_OK",
+      "params": [
+        {
+          "name": "eOperation",
+          "value_in": "0",
+          "value_out": "0",
+          "type": "IN",
+          "use_regex": false
+        },
+        {
+          "name": "abKey",
+          "value_in": "012345678901234567890123456789012345678901234567",
+          "value_out": "0",
+          "type": "IN",
+          "use_regex": false
+        },
+        {
+          "name": "abData",
+          "value_in": "AAAAAAAAAAAAAAAABBBBBBBBBBBBBBBB",
+          "value_out": "0",
+          "type": "IN",
+          "use_regex": false
+        },
+        {
+          "name": "abResult",
+          "value_in": "",
+          "value_out": "C99CF6FCE85F1F73EF7DF4B0931FF4F7",
+          "type": "OUT",
+          "use_regex": false
+        }
+      ]
+    }
+  ]
+}

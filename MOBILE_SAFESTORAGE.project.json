@@ -1,0 +1,20 @@
+{
+  "id": "MOBILE_SAFESTORAGE",
+  "name": "MOBILE_SAFESTORAGE.project",
+  "description": "GEDI Compatibility to device",
+  "override_user_confirm": false,
+  "scripts": [
+    {
+      "id": "SAFESTORAGE",
+      "name": "SAFESTORAGE",
+      "description": "Script to cover SAFESTORAGE interface's functions",
+      "break_setup": false,
+      "break_message": "",
+      "features": [
+        {
+          "path": "features/isafestorage.feature.json"
+        }
+      ]
+    }
+  ]
+}

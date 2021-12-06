@@ -1,0 +1,90 @@
+{
+  "id": "CapturePIN",
+  "name": "CapturePIN.scenario",
+  "description": "Check the Capture PIN feature",
+  "flags": ["SWP", "TEE"],
+  "steps": [
+    {
+      "id": "01-CapturePIN",
+      "name": "Capture PIN",
+      "user_confirm": true,
+      "is_loop": false,
+      "loop_count": 0,
+      "loop_sleep": 0,
+      "description": "Enter PIN -> 1234",
+      "cmd_id": "IKMS_CapturePIN",
+      "result": "GEDI_RET_OK",
+      "params": [
+        {
+          "name": "globalTimeout",
+          "value_in": "100000",
+          "value_out": "0",
+          "type": "IN",
+          "use_regex": false
+        },
+        {
+          "name": "eventTimeout",
+          "value_in": "120000",
+          "value_out": "0",
+          "type": "IN",
+          "use_regex": false
+        },
+        {
+          "name": "minPINLen",
+          "value_in": "4",
+          "value_out": "0",
+          "type": "IN",
+          "use_regex": false
+        },
+        {
+          "name": "maxPINLen",
+          "value_in": "6",
+          "value_out": "0",
+          "type": "IN",
+          "use_regex": false
+        }
+      ]
+    },
+    {
+      "id": "02-CapturePIN",
+      "name": "Capture PIN",
+      "user_confirm": true,
+      "is_loop": false,
+      "loop_count": 0,
+      "loop_sleep": 0,
+      "description": "Enter PIN -> 1234",
+      "cmd_id": "IKMS_CapturePIN",
+      "result": "GEDI_RET_OK",
+      "params": [
+        {
+          "name": "globalTimeout",
+          "value_in": "30000",
+          "value_out": "0",
+          "type": "IN",
+          "use_regex": false
+        },
+        {
+          "name": "eventTimeout",
+          "value_in": "20000",
+          "value_out": "0",
+          "type": "IN",
+          "use_regex": false
+        },
+        {
+          "name": "minPINLen",
+          "value_in": "8",
+          "value_out": "0",
+          "type": "IN",
+          "use_regex": false
+        },
+        {
+          "name": "maxPINLen",
+          "value_in": "5",
+          "value_out": "0",
+          "type": "IN",
+          "use_regex": false
+        }
+      ]
+    }
+  ]
+}

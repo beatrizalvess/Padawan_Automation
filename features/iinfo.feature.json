@@ -1,0 +1,11 @@
+{
+  "id": "INFO",
+  "name": "info.feature",
+  "description": "Features related to INFO",
+  "flags": ["TEE", "SWP"],
+  "scenarios": [
+    {
+      "path": "scenarios/INFO/IINFO_ProductNameGet.scenario.json"
+    }
+  ]
+}

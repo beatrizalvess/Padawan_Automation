@@ -1,0 +1,144 @@
+{
+  "id": "keyPresenceTest",
+  "name": "keyPresentTest.scenario",
+  "description": "Check key presence in safe storage",
+  "flags": ["SWP", "TEE"],
+  "steps": [
+    {
+      "id": "01-KeyPresenceTest",
+      "name": "01-KeyPresenceTest",
+      "user_confirm": false,
+      "is_loop": false,
+      "loop_count": 0,
+      "loop_sleep": 0,
+      "description": "It checks if there's a DATA key saved previously via AES",
+      "cmd_id": "IKMS_KeyPresenceTest",
+      "result": "GEDI_RET_TEST_FAIL",
+      "params": [
+        {
+          "name": "eKeyType",
+          "value_in": "4",
+          "value_out": "",
+          "type": "IN",
+          "use_regex": false
+        },
+        {
+          "name": "eKeyPurpose",
+          "value_in": "1",
+          "value_out": "",
+          "type": "IN",
+          "use_regex": false
+        },
+        {
+          "name": "uiKeyIndex",
+          "value_in": "1",
+          "value_out": "",
+          "type": "IN",
+          "use_regex": false
+        }
+      ]
+    },
+    {
+      "id": "02-KeyPresenceTest",
+      "name": "02-KeyPresenceTest",
+      "user_confirm": false,
+      "is_loop": false,
+      "loop_count": 0,
+      "loop_sleep": 0,
+      "description": "It checks if there's a DATA key saved previously via 3DES",
+      "cmd_id": "IKMS_KeyPresenceTest",
+      "result": "GEDI_RET_TEST_FAIL",
+      "params": [
+        {
+          "name": "eKeyType",
+          "value_in": "1",
+          "value_out": "",
+          "type": "IN",
+          "use_regex": false
+        },
+        {
+          "name": "eKeyPurpose",
+          "value_in": "1",
+          "value_out": "",
+          "type": "IN",
+          "use_regex": false
+        },
+        {
+          "name": "uiKeyIndex",
+          "value_in": "1",
+          "value_out": "",
+          "type": "IN",
+          "use_regex": false
+        }
+      ]
+    },
+    {
+      "id": "03-KeyPresenceTest",
+      "name": "03-KeyPresenceTest",
+      "user_confirm": false,
+      "is_loop": false,
+      "loop_count": 0,
+      "loop_sleep": 0,
+      "description": "It checks if there's a PIN key saved previously via AES",
+      "cmd_id": "IKMS_KeyPresenceTest",
+      "result": "GEDI_RET_TEST_FAIL",
+      "params": [
+        {
+          "name": "eKeyType",
+          "value_in": "4",
+          "value_out": "",
+          "type": "IN",
+          "use_regex": false
+        },
+        {
+          "name": "eKeyPurpose",
+          "value_in": "0",
+          "value_out": "",
+          "type": "IN",
+          "use_regex": false
+        },
+        {
+          "name": "uiKeyIndex",
+          "value_in": "1",
+          "value_out": "",
+          "type": "IN",
+          "use_regex": false
+        }
+      ]
+    },
+    {
+      "id": "04-KeyPresenceTest",
+      "name": "04-KeyPresenceTest",
+      "user_confirm": false,
+      "is_loop": false,
+      "loop_count": 0,
+      "loop_sleep": 0,
+      "description": "It checks if there's a PIN key saved previously via 3DES",
+      "cmd_id": "IKMS_KeyPresenceTest",
+      "result": "GEDI_RET_TEST_FAIL",
+      "params": [
+        {
+          "name": "eKeyType",
+          "value_in": "1",
+          "value_out": "",
+          "type": "IN",
+          "use_regex": false
+        },
+        {
+          "name": "eKeyPurpose",
+          "value_in": "0",
+          "value_out": "",
+          "type": "IN",
+          "use_regex": false
+        },
+        {
+          "name": "uiKeyIndex",
+          "value_in": "1",
+          "value_out": "",
+          "type": "IN",
+          "use_regex": false
+        }
+      ]
+    }
+  ]
+}

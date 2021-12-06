@@ -1,0 +1,206 @@
+{
+    "id": "ICRYPT_3DES",
+    "description": "It executes encryption operation to 3DES",
+    "name": "ICRYPT_3DES.scenario",
+    "flags": ["SWP", "TEE"],
+    "steps": [
+        {
+            "id": "1_CRYPT_3DES",
+            "name": "1 CRYPT 3DES",
+            "user_confirm": false,
+            "is_loop": false,
+            "loop_count": 0,
+            "loop_sleep": 0,
+            "description": "It initializes the execution of encryption operation to DES with 128-bit key",
+            "cmd_id": "ICRYPT_DES",
+            "result": "GEDI_RET_OK",
+            "params": [
+                {
+                    "name": "eOperation",
+                    "value_in": "0",
+                    "value_out": "0",
+                    "type": "IN",
+                    "use_regex": false
+                },
+                {
+                    "name": "abKey",
+                    "value_in": "1234567890ABCDEF1234567890ABCDEF",
+                    "value_out": "0",
+                    "type": "IN",
+                    "use_regex": false
+                },
+                {
+                    "name": "abData",
+                    "value_in": "AAAAAAAAAAAAAAAABBBBBBBBBBBBBBBB",
+                    "value_out": "0",
+                    "type": "IN",
+                    "use_regex": false
+                },
+                {
+                    "name": "abResult",
+                    "value_in": "0",
+                    "value_out": "DD23AD4E802D85D5F97303DA0BCEB8ED",
+                    "type": "OUT",
+                    "use_regex": false
+                }
+            ]
+        },
+        {
+            "id": "2_DECRYPT_3DES",
+            "name": "2 DECRYPT 3DES",
+            "user_confirm": false,
+            "is_loop": false,
+            "loop_count": 1,
+            "loop_sleep": 1,
+            "description": "It initializes the execution of decryption operation to DES with 128-bit key",
+            "cmd_id": "ICRYPT_DES",
+            "result": "GEDI_RET_OK",
+            "params": [
+                {
+                    "name": "eOperation",
+                    "value_in": "1",
+                    "value_out": "0",
+                    "type": "IN",
+                    "use_regex": false
+                },
+                {
+                    "name": "abKey",
+                    "value_in": "1234567890ABCDEF1234567890ABCDEF",
+                    "value_out": "0",
+                    "type": "IN",
+                    "use_regex": false
+                },
+                {
+                    "name": "abData",
+                    "value_in": "DD23AD4E802D85D5F97303DA0BCEB8ED",
+                    "value_out": "0",
+                    "type": "IN",
+                    "use_regex": false
+                },
+                {
+                    "name": "abResult",
+                    "value_in": "0",
+                    "value_out": "AAAAAAAAAAAAAAAABBBBBBBBBBBBBBBB",
+                    "type": "OUT",
+                    "use_regex": false
+                }
+            ]
+        },
+        {
+            "id": "3_CRYPT_ERROR_3DES",
+            "name": "3 CRYPT ERROR 3DES",
+            "user_confirm": false,
+            "is_loop": false,
+            "loop_count": 1,
+            "loop_sleep": 1,
+            "description": "Check system behavior with incorrect keys for DES with 24-bit key.",
+            "cmd_id": "ICRYPT_DES",
+            "result": "GEDI_RET_CRYPT_ERROR",
+            "params": [
+                {
+                    "name": "eOperation",
+                    "value_in": "0",
+                    "value_out": "0",
+                    "type": "IN",
+                    "use_regex": false
+                },
+                {
+                    "name": "abKey",
+                    "value_in": "1234567890ABCDEF12345678",
+                    "value_out": "0",
+                    "type": "IN",
+                    "use_regex": false
+                },
+                {
+                    "name": "abData",
+                    "value_in": "AAAAAAAAAAAAAAAABBBBBBBBBBBBBBBB",
+                    "value_out": "0",
+                    "type": "IN",
+                    "use_regex": false
+                }
+            ]
+        },
+        {
+            "id": "4_ENCRYPT_3DES",
+            "name": "4 ENCRYPT 3DES",
+            "user_confirm": false,
+            "is_loop": false,
+            "loop_count": 0,
+            "loop_sleep": 0,
+            "description": "It executes encryption operation to DES with 192-bit key",
+            "cmd_id": "ICRYPT_DES",
+            "result": "GEDI_RET_OK",
+            "params": [
+                {
+                    "name": "eOperation",
+                    "value_in": "0",
+                    "value_out": "0",
+                    "type": "IN",
+                    "use_regex": false
+                },
+                {
+                    "name": "abKey",
+                    "value_in": "1234567890ABCDEF1234567890ABCDEF1234567890ABCDEF",
+                    "value_out": "0",
+                    "type": "IN",
+                    "use_regex": false
+                },
+                {
+                    "name": "abData",
+                    "value_in": "AAAAAAAAAAAAAAAAAAAAAAAABBBBBBBBBBBBBBBBBBBBBBBB",
+                    "value_out": "0",
+                    "type": "IN",
+                    "use_regex": false
+                },
+                {
+                    "name": "abResult",
+                    "value_in": "0",
+                    "value_out": "DD23AD4E802D85D54D75EA8AF1DADD5CF97303DA0BCEB8ED",
+                    "type": "OUT",
+                    "use_regex": false
+                }
+            ]
+        },
+        {
+            "id": "5_DECRYPT_3DES",
+            "name": "5 DECRYPT 3DES",
+            "user_confirm": false,
+            "is_loop": false,
+            "loop_count": 0,
+            "loop_sleep": 0,
+            "description": "It executes decryption operation to DES with 192-bit key",
+            "cmd_id": "ICRYPT_DES",
+            "result": "GEDI_RET_OK",
+            "params": [
+                {
+                    "name": "eOperation",
+                    "value_in": "1",
+                    "value_out": "0",
+                    "type": "IN",
+                    "use_regex": false
+                },
+                {
+                    "name": "abKey",
+                    "value_in": "1234567890ABCDEF1234567890ABCDEF1234567890ABCDEF",
+                    "value_out": "0",
+                    "type": "IN",
+                    "use_regex": false
+                },
+                {
+                    "name": "abData",
+                    "value_in": "DD23AD4E802D85D54D75EA8AF1DADD5CF97303DA0BCEB8ED",
+                    "value_out": "0",
+                    "type": "IN",
+                    "use_regex": false
+                },
+                {
+                    "name": "abResult",
+                    "value_in": "0",
+                    "value_out": "AAAAAAAAAAAAAAAAAAAAAAAABBBBBBBBBBBBBBBBBBBBBBBB",
+                    "type": "OUT",
+                    "use_regex": false
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,71 @@
+{
+  "id": "CLOCK_UserClock",
+  "name": "CLOCK_UserClock.scenario",
+  "description": "Test of user's RTC configuration",
+  "flags": ["TEE", "SWP"],
+  "steps": [
+    
+    {
+      "id": "1_ICLOCK_RTCGet",
+      "name": "1 ICLOCK_RTCGet",
+      "user_confirm": false,
+      "is_loop": false,
+      "loop_count": 0,
+      "loop_sleep": 0,
+      "description": "It gets values of second, minute, hour, day, month, year on RTC",
+      "cmd_id": "ICLOCK_RTCGet",
+      "result": "GEDI_RET_OK",
+      "params": [
+        {
+          "name": "bSecond",
+          "value_in": "",
+          "value_out": "[0-9]{1,2}",
+          "type": "OUT",
+          "use_regex": true
+        },
+        {
+          "name": "bMinute",
+          "value_in": "",
+          "value_out": "[0-9]{1,2}",
+          "type": "OUT",
+          "use_regex": true
+        },
+        {
+          "name": "bHour",
+          "value_in": "",
+          "value_out": "[0-9]{1,2}",
+          "type": "OUT",
+          "use_regex": true
+        },
+        {
+          "name": "bDay",
+          "value_in": "",
+          "value_out": "[0-9]{1,2}",
+          "type": "OUT",
+          "use_regex": true
+        },
+        {
+          "name": "bMonth",
+          "value_in": "",
+          "value_out": "[0-9]{1,2}",
+          "type": "OUT",
+          "use_regex": true
+        },
+        {
+          "name": "bYear",
+          "value_in": "",
+          "value_out": "[0-9]{1,2}",
+          "type": "OUT",
+          "use_regex": true
+        },
+        {
+          "name": "bDoW",
+          "value_in": "",
+          "value_out": "[0-7]{1,2}",
+          "type": "OUT",
+          "use_regex": true
+        }
+      ]
+    }
+  ]
+}

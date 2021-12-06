@@ -1,0 +1,20 @@
+{
+    "id": "KMS.project",
+    "name": "KMS.project",
+    "description": "Compatibilidade da GEDI com o equipamento",
+    "override_user_confirm": false,
+    "scripts": [
+        {
+            "id": "KMS",
+            "name": "KMS",
+            "description": "Roteiro para cobrir funções de interface de KMS",
+            "break_setup": false,
+            "break_message": "",
+            "features": [
+                {
+                    "path": "features/ikms.feature.json"
+                }
+            ]
+        }
+    ]
+}

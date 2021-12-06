@@ -1,0 +1,474 @@
+{
+  "id": "SaveEncryptedKeyAndEncryptData",
+  "name": "Save Encrypted Key And Encrypt Data",
+  "description": "It saves encrypted Key",
+  "flags": ["SWP", "TEE"],
+  "steps": [
+    {
+      "id": "01-SaveEncryptedKeyAndEncryptData",
+      "name": "01 RSA Generate Key",
+      "user_confirm": false,
+      "is_loop": false,
+      "loop_count": 0,
+      "loop_sleep": 0,
+      "description": "It generates RSA public key",
+      "cmd_id": "ICRYPT_RSA_GENERATE_KEY",
+      "result": "GEDI_RET_OK",
+      "params": [
+        {
+          "name": "uiKeyIndex",
+          "value_in": "1",
+          "value_out": "0",
+          "type": "IN",
+          "use_regex": false
+        },
+        {
+          "name": "uiKeyBits",
+          "value_in": "2048",
+          "value_out": "0",
+          "type": "IN",
+          "use_regex": false
+        },
+        {
+          "name": "abExp",
+          "value_in": "",
+          "value_out": "&RsaExp",
+          "type": "IN/OUT",
+          "use_regex": false
+        },
+        {
+          "name": "abResult",
+          "value_in": "0",
+          "value_out": "&RsaMod",
+          "type": "OUT",
+          "use_regex": false
+        }
+      ]
+    },
+    {
+      "id": "02-SaveEncryptedKeyAndEncryptData",
+      "name": "02 RSA Encrypt",
+      "description": "",
+      "user_confirm": false,
+      "is_loop": false,
+      "loop_count": 0,
+      "loop_sleep": 0,
+      "cmd_id": "ICRYPT_RSA",
+      "result": "GEDI_RET_OK",
+      "params": [
+        {
+          "name": "abModulus",
+          "value_in": "&RsaMod",
+		      "value_out": "0",
+          "type": "IN",
+          "use_regex": false
+        },
+        {
+          "name": "abExponent",
+          "value_in": "&RsaExp",
+		      "value_out": "0",
+          "type": "IN",
+          "use_regex": false
+        },
+        {
+          "name": "abData",
+          "value_in": "01234567890123456789012345678901",
+		      "value_out": "0",
+          "type": "IN",
+          "use_regex": false
+        },
+        {
+          "name": "abResult",
+		      "value_in": "0",
+          "value_out": "&abRsaResult",
+          "type": "OUT",
+          "use_regex": false
+        }
+      ]
+    },
+    {
+      "id": "03-SaveEncryptedKeyAndEncryptData",
+      "name": "03 Save Encrypted Key",
+      "user_confirm": false,
+      "is_loop": false,
+      "loop_count": 0,
+      "loop_sleep": 0,
+      "description": "It saves a encrypted Key",
+      "cmd_id": "IKMS_SaveEncryptedKey",
+      "result": "GEDI_RET_OK",
+      "params": [
+        {
+          "name": "eKeyType",
+          "value_in": "4",
+          "value_out": "",
+          "type": "IN",
+          "use_regex": false
+        },
+        {
+          "name": "eKeyPurpose",
+          "value_in": "1",
+          "value_out": "",
+          "type": "IN",
+          "use_regex": false
+        },
+        {
+          "name": "uiKeyIndex",
+          "value_in": "1",
+          "value_out": "",
+          "type": "IN",
+          "use_regex": false
+        },
+        {
+          "name": "abKey",
+          "value_in": "&abRsaResult",
+          "value_out": "",
+          "type": "IN",
+          "use_regex": false
+        },
+        {
+          "name": "uiRSAkeyIndex",
+          "value_in": "1",
+          "value_out": "",
+          "type": "IN",
+          "use_regex": false
+        }
+      ]
+    },
+    {
+      "id": "04-SaveEncryptedKeyAndEncryptData",
+      "name": "04 Key Presence Test",
+      "user_confirm": false,
+      "is_loop": false,
+      "loop_count": 0,
+      "loop_sleep": 0,
+      "description": "It checks key presence",
+      "cmd_id": "IKMS_KeyPresenceTest",
+      "result": "GEDI_RET_OK",
+      "params": [
+        {
+          "name": "eKeyType",
+          "value_in": "4",
+          "value_out": "",
+          "type": "IN",
+          "use_regex": false
+        },
+        {
+          "name": "eKeyPurpose",
+          "value_in": "1",
+          "value_out": "",
+          "type": "IN",
+          "use_regex": false
+        },
+        {
+          "name": "uiKeyIndex",
+          "value_in": "1",
+          "value_out": "",
+          "type": "IN",
+          "use_regex": false
+        }
+      ]
+    },
+    {
+      "id": "05-SaveEncryptedKeyAndEncryptData",
+      "name": "05 Encrypt Data",
+      "user_confirm": false,
+      "is_loop": false,
+      "loop_count": 0,
+      "loop_sleep": 0,
+      "description": "Encrypt Data",
+      "cmd_id": "IKMS_EncryptData",
+      "result": "GEDI_RET_OK",
+      "params": [
+        {
+          "name": "bVersion",
+          "value_in": "0",
+          "value_out": "",
+          "type": "IN",
+          "use_regex": false
+        },
+        {
+          "name": "eKeyType",
+          "value_in": "4",
+          "value_out": "",
+          "type": "IN",
+          "use_regex": false
+        },
+        {
+          "name": "eOperation",
+          "value_in": "0",
+          "value_out": "",
+          "type": "IN",
+          "use_regex": false
+        },
+        {
+          "name": "uiKeyIndex",
+          "value_in": "1",
+          "value_out": "",
+          "type": "IN",
+          "use_regex": false
+        },
+        {
+          "name": "eMode",
+          "value_in": "0",
+          "value_out": "",
+          "type": "IN",
+          "use_regex": false
+        },
+        {
+          "name": "abICV",
+          "value_in": "00000000000000000000000000000000",
+          "value_out": "",
+          "type": "IN",
+          "use_regex": false
+        },
+        {
+          "name": "abInput",
+          "value_in": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
+          "value_out": "",
+          "type": "IN",
+          "use_regex": false
+        },
+        {
+          "name": "abSK",
+          "value_in": "98765432109876543210987654321098",
+          "value_out": "",
+          "type": "IN",
+          "use_regex": false
+        },
+        {
+          "name": "abResult",
+          "value_in": "0",
+          "value_out": "1B0AF23F7855E68CD2A89F6B793ADC0488F5D34F851379578EE47B03DA3C1CDD",
+          "type": "OUT",
+          "use_regex": true
+        }
+      ]
+    },
+    {
+      "id": "06-SaveEncryptedKeyAndEncryptData",
+      "name": "06 Key Presence Test",
+      "user_confirm": false,
+      "is_loop": false,
+      "loop_count": 0,
+      "loop_sleep": 0,
+      "description": "It checks key presence",
+      "cmd_id": "IKMS_KeyPresenceTest",
+      "result": "GEDI_RET_TEST_FAIL",
+      "params": [
+        {
+          "name": "eKeyType",
+          "value_in": "4",
+          "value_out": "",
+          "type": "IN",
+          "use_regex": false
+        },
+        {
+          "name": "eKeyPurpose",
+          "value_in": "1",
+          "value_out": "",
+          "type": "IN",
+          "use_regex": false
+        },
+        {
+          "name": "uiKeyIndex",
+          "value_in": "1",
+          "value_out": "",
+          "type": "IN",
+          "use_regex": false
+        }
+      ]
+    },
+    {
+      "id": "07-SaveEncryptedKeyAndEncryptData",
+      "name": "07 Save Encrypted Key",
+      "user_confirm": false,
+      "is_loop": false,
+      "loop_count": 0,
+      "loop_sleep": 0,
+      "description": "It saves a encrypted Key",
+      "cmd_id": "IKMS_SaveEncryptedKey",
+      "result": "GEDI_RET_OK",
+      "params": [
+        {
+          "name": "eKeyType",
+          "value_in": "4",
+          "value_out": "",
+          "type": "IN",
+          "use_regex": false
+        },
+        {
+          "name": "eKeyPurpose",
+          "value_in": "1",
+          "value_out": "",
+          "type": "IN",
+          "use_regex": false
+        },
+        {
+          "name": "uiKeyIndex",
+          "value_in": "1",
+          "value_out": "",
+          "type": "IN",
+          "use_regex": false
+        },
+        {
+          "name": "abKey",
+          "value_in": "&abRsaResult",
+          "value_out": "",
+          "type": "IN",
+          "use_regex": false
+        },
+        {
+          "name": "uiRSAkeyIndex",
+          "value_in": "1",
+          "value_out": "",
+          "type": "IN",
+          "use_regex": false
+        }
+      ]
+    },
+    {
+      "id": "08-SaveEncryptedKeyAndEncryptData",
+      "name": "08 Key Presence Test",
+      "user_confirm": false,
+      "is_loop": false,
+      "loop_count": 7,
+      "loop_sleep": 10,
+      "description": "It checks key presence",
+      "cmd_id": "IKMS_KeyPresenceTest",
+      "result": "GEDI_RET_OK",
+      "params": [
+        {
+          "name": "eKeyType",
+          "value_in": "4",
+          "value_out": "",
+          "type": "IN",
+          "use_regex": false
+        },
+        {
+          "name": "eKeyPurpose",
+          "value_in": "1",
+          "value_out": "",
+          "type": "IN",
+          "use_regex": false
+        },
+        {
+          "name": "uiKeyIndex",
+          "value_in": "1",
+          "value_out": "",
+          "type": "IN",
+          "use_regex": false
+        }
+      ]
+    },
+    {
+      "id": "09-SaveEncryptedKeyAndEncryptData",
+      "name": "09 Decrypt Data",
+      "user_confirm": false,
+      "is_loop": false,
+      "loop_count": 0,
+      "loop_sleep": 0,
+      "description": "Decrypt Data",
+      "cmd_id": "IKMS_EncryptData",
+      "result": "GEDI_RET_OK",
+      "params": [
+        {
+          "name": "bVersion",
+          "value_in": "0",
+          "value_out": "",
+          "type": "IN",
+          "use_regex": false
+        },
+        {
+          "name": "eKeyType",
+          "value_in": "4",
+          "value_out": "",
+          "type": "IN",
+          "use_regex": false
+        },
+        {
+          "name": "eOperation",
+          "value_in": "1",
+          "value_out": "",
+          "type": "IN",
+          "use_regex": false
+        },
+        {
+          "name": "uiKeyIndex",
+          "value_in": "1",
+          "value_out": "",
+          "type": "IN",
+          "use_regex": false
+        },
+        {
+          "name": "eMode",
+          "value_in": "0",
+          "value_out": "",
+          "type": "IN",
+          "use_regex": false
+        },
+        {
+          "name": "abICV",
+          "value_in": "00000000000000000000000000000000",
+          "value_out": "",
+          "type": "IN",
+          "use_regex": false
+        },
+        {
+          "name": "abInput",
+          "value_in": "1B0AF23F7855E68CD2A89F6B793ADC0488F5D34F851379578EE47B03DA3C1CDD",
+          "value_out": "",
+          "type": "IN",
+          "use_regex": false
+        },
+        {
+          "name": "abSK",
+          "value_in": "98765432109876543210987654321098",
+          "value_out": "",
+          "type": "IN",
+          "use_regex": false
+        },
+        {
+          "name": "abResult",
+          "value_in": "0",
+          "value_out": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
+          "type": "OUT",
+          "use_regex": true
+        }
+      ]
+    },
+    {
+      "id": "10-SaveEncryptedKeyAndEncryptData",
+      "name": "10 Key Presence Test",
+      "user_confirm": false,
+      "is_loop": false,
+      "loop_count": 0,
+      "loop_sleep": 0,
+      "description": "It checks key presence",
+      "cmd_id": "IKMS_KeyPresenceTest",
+      "result": "GEDI_RET_TEST_FAIL",
+      "params": [
+        {
+          "name": "eKeyType",
+          "value_in": "4",
+          "value_out": "",
+          "type": "IN",
+          "use_regex": false
+        },
+        {
+          "name": "eKeyPurpose",
+          "value_in": "1",
+          "value_out": "",
+          "type": "IN",
+          "use_regex": false
+        },
+        {
+          "name": "uiKeyIndex",
+          "value_in": "1",
+          "value_out": "",
+          "type": "IN",
+          "use_regex": false
+        }
+      ]
+    }
+  ]
+}

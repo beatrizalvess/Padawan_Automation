@@ -1,0 +1,234 @@
+{
+  "id": "GetPinBlock_PAN_8Digitos",
+  "name": "Get Pin Block PAN 8Digitos",
+  "description": "It saves encrypted Key",
+  "flags": ["SWP", "TEE"],
+  "steps": [
+    {
+      "id": "1-GetPinBlock_PAN_8Digitos.scenario",
+      "name": "1 - Capture PIN",
+      "user_confirm": true,
+      "is_loop": false,
+      "loop_count": 0,
+      "loop_sleep": 0,
+      "description": "Enter PIN",
+      "cmd_id": "IKMS_CapturePIN",
+      "result": "GEDI_RET_OK",
+      "params": [
+        {
+          "name": "globalTimeout",
+          "value_in": "300000",
+          "value_out": "0",
+          "type": "IN",
+          "use_regex": false
+        },
+        {
+          "name": "eventTimeout",
+          "value_in": "50000",
+          "value_out": "0",
+          "type": "IN",
+          "use_regex": false
+        },
+        {
+          "name": "minPINLen",
+          "value_in": "4",
+          "value_out": "0",
+          "type": "IN",
+          "use_regex": false
+        },
+        {
+          "name": "maxPINLen",
+          "value_in": "6",
+          "value_out": "0",
+          "type": "IN",
+          "use_regex": false
+        }
+      ]
+    },
+    {
+      "id": "2-GetPinBlock_PAN_8Digitos.scenario",
+      "name": "2 - RSA Generate Key",
+      "user_confirm": false,
+      "is_loop": false,
+      "loop_count": 0,
+      "loop_sleep": 0,
+      "description": "It generates RSA public key",
+      "cmd_id": "ICRYPT_RSA_GENERATE_KEY",
+      "result": "GEDI_RET_OK",
+      "params": [
+        {
+          "name": "uiKeyIndex",
+          "value_in": "1",
+          "value_out": "0",
+          "type": "IN",
+          "use_regex": false
+        },
+        {
+          "name": "uiKeyBits",
+          "value_in": "2048",
+          "value_out": "0",
+          "type": "IN",
+          "use_regex": false
+        },
+        {
+          "name": "abExp",
+          "value_in": "",
+          "value_out": "&RsaExp",
+          "type": "IN/OUT",
+          "use_regex": false
+        },
+        {
+          "name": "abResult",
+          "value_in": "0",
+          "value_out": "&RsaMod",
+          "type": "OUT",
+          "use_regex": false
+        }
+      ]
+    },
+    {
+      "id": "3-GetPinBlock_PAN_8Digitos.scenario",
+      "name": "3 - RSA Encrypt",
+      "description": "",
+      "user_confirm": false,
+      "is_loop": false,
+      "loop_count": 0,
+      "loop_sleep": 0,
+      "cmd_id": "ICRYPT_RSA",
+      "result": "GEDI_RET_OK",
+      "params": [
+        {
+          "name": "abModulus",
+          "value_in": "&RsaMod",
+		      "value_out": "0",
+          "type": "IN",
+          "use_regex": false
+        },
+        {
+          "name": "abExponent",
+          "value_in": "&RsaExp",
+		      "value_out": "0",
+          "type": "IN",
+          "use_regex": false
+        },
+        {
+          "name": "abData",
+          "value_in": "01234567890123456789012345678901",
+		      "value_out": "0",
+          "type": "IN",
+          "use_regex": false
+        },
+        {
+          "name": "abResult",
+		      "value_in": "0",
+          "value_out": "&abRsaResult",
+          "type": "OUT",
+          "use_regex": false
+        }
+      ]
+    },
+    {
+      "id": "4-GetPinBlock_PAN_8Digitos.scenario",
+      "name": "4 - Save Encrypted Key",
+      "user_confirm": false,
+      "is_loop": false,
+      "loop_count": 0,
+      "loop_sleep": 0,
+      "description": "It saves a encrypted Key",
+      "cmd_id": "IKMS_SaveEncryptedKey",
+      "result": "GEDI_RET_OK",
+      "params": [
+        {
+          "name": "eKeyType",
+          "value_in": "4",
+          "value_out": "",
+          "type": "IN",
+          "use_regex": false
+        },
+        {
+          "name": "eKeyPurpose",
+          "value_in": "0",
+          "value_out": "",
+          "type": "IN",
+          "use_regex": false
+        },
+        {
+          "name": "uiKeyIndex",
+          "value_in": "1",
+          "value_out": "",
+          "type": "IN",
+          "use_regex": false
+        },
+        {
+          "name": "abKey",
+          "value_in": "&abRsaResult",
+          "value_out": "",
+          "type": "IN",
+          "use_regex": false
+        },
+        {
+          "name": "uiRSAkeyIndex",
+          "value_in": "1",
+          "value_out": "",
+          "type": "IN",
+          "use_regex": false
+        }
+      ]
+    },
+    {
+      "id": "5-GetPinBlock_PAN_8Digitos.scenario",
+      "name": "5 - Get PIN Block",
+      "user_confirm": false,
+      "is_loop": false,
+      "loop_count": 0,
+      "loop_sleep": 0,
+      "description": "wk = AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+      "cmd_id": "IKMS_GetPINBlock",
+      "result": "GEDI_RET_OK",
+      "params": [
+        {
+          "name": "keyType",
+          "value_in": "4",
+          "value_out": "",
+          "type": "IN",
+          "use_regex": false
+        },
+        {
+          "name": "keyIndex",
+          "value_in": "1",
+          "value_out": "",
+          "type": "IN",
+          "use_regex": false
+        },
+        {
+          "name": "wKey",
+          "value_in": "A7147776C069A9FE6708EF0617B72AAC",
+          "value_out": "",
+          "type": "IN",
+          "use_regex": false
+        },
+        {
+          "name": "blockType",
+          "value_in": "20",
+          "value_out": "",
+          "type": "IN",
+          "use_regex": false
+        },
+        {
+          "name": "pan",
+          "value_in": "12345678",
+          "value_out": "",
+          "type": "IN",
+          "use_regex": false
+        },
+        {
+          "name": "abResult",
+          "value_in": "0",
+          "value_out": "[0-9A-Z]{32}",
+          "type": "OUT",
+          "use_regex": true
+        }
+      ]
+    } 
+  ]
+}

@@ -1,0 +1,20 @@
+{
+    "id": "MOBILE_CRYPT",
+    "name": "crypt.feature",
+    "description": "Features related to CRYPT",
+    "flags": ["TEE", "SWP"],
+    "scenarios": [
+        {"path": "scenarios/CRYPT/ICRYPT_RSA_GENERATE_KEY.scenario.json"},
+        {"path": "scenarios/CRYPT/ICRYPT_RSA.scenario.json"},
+        {"path": "scenarios/CRYPT/ICRYPT_RNG.scenario.json"},
+        {"path": "scenarios/CRYPT/ICRYPT_3DES.scenario.json"},
+        {"path": "scenarios/CRYPT/ICRYPT_DES_Encrypt_InvalidDataSize.scenario.json"},
+        {"path": "scenarios/CRYPT/ICRYPT_DES_Encrypt_TDES_FullLenght.scenario.json"},
+        {"path": "scenarios/CRYPT/ICRYPT_SHA1.scenario.json"},
+        {"path": "scenarios/CRYPT/ICRYPT_AESN.scenario.json"},
+        {"path": "scenarios/CRYPT/ICRYPT_AES-192.scenario.json"},
+        {"path": "scenarios/CRYPT/ICRYPT_AES.scenario.json"},
+        {"path": "scenarios/CRYPT/ICRYPT_AES_DifferentDataSize.scenario.json"},
+        {"path": "scenarios/CRYPT/ICRYPT_AES_InvalidKeySize2.scenario.json"}
+    ]
+}

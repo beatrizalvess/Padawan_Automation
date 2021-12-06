@@ -1,0 +1,334 @@
+{
+  "id": "ISAFESTORAGE_FULL",
+  "description": "Execute command to open secure storage",
+  "name": "ISAFESTORAGE_FULL.scenario",
+  "flags": ["SWP", "TEE"],
+  "steps": [
+    {
+      "id": "1 SAFESTORAGE OPEN",
+      "name": "1 SAFESTORAGE OPEN",
+      "user_confirm": false,
+      "is_loop": false,
+      "loop_count": 0,
+      "loop_sleep": 0,
+      "description": "Execute command to open secure storage",
+      "cmd_id": "ISAFESTORAGE_OPEN",
+      "result": "GEDI_RET_OK",
+      "params": [
+        {
+          "name": "fileName",
+          "value_in": "fileName1",
+          "value_out": "",
+          "type": "IN",
+          "use_regex": false
+        },
+        {
+          "name": "fileStorageType",
+          "value_in": "0",
+          "value_out": "0",
+          "type": "IN",
+          "use_regex": false
+        },
+        {
+          "name": "fileHandle",
+          "value_in": "",
+          "value_out": "&fileHandle1",
+          "type": "OUT",
+          "use_regex": false
+        }
+      ]
+    },
+    {
+      "id": "2 SAFESTORAGE OPEN",
+      "name": "2 SAFESTORAGE OPEN",
+      "user_confirm": false,
+      "is_loop": false,
+      "loop_count": 0,
+      "loop_sleep": 0,
+      "description": "Execute command to write secure storage",
+      "cmd_id": "ISAFESTORAGE_OPEN",
+      "result": "GEDI_RET_OK",
+      "params": [
+        {
+          "name": "fileName",
+          "value_in": "fileName2",
+          "value_out": "",
+          "type": "IN",
+          "use_regex": false
+        },
+        {
+          "name": "eStorage",
+          "value_in": "0",
+          "value_out": "0",
+          "type": "IN",
+          "use_regex": false
+        },
+        {
+          "name": "fileHandle",
+          "value_in": "",
+          "value_out": "&fileHandle2",
+          "type": "OUT",
+          "use_regex": false
+        }
+      ]
+    },
+    {
+      "id": "3 SAFESTORAGE WRITE",
+      "name": "3 SAFESTORAGE WRITE",
+      "user_confirm": false,
+      "is_loop": false,
+      "loop_count": 0,
+      "loop_sleep": 0,
+      "description": "Execute command to write secure storage",
+      "cmd_id": "ISAFESTORAGE_WRITE",
+      "result": "GEDI_RET_OK",
+      "params": [
+        {
+          "name": "fileHandle",
+          "value_in": "&fileHandle1",
+          "value_out": "",
+          "type": "IN",
+          "use_regex": false
+        },
+        {
+          "name": "buffer",
+          "value_in": "6461746120746F206265207361766564",
+          "value_out": "",
+          "type": "IN",
+          "use_regex": false
+        },
+        {
+          "name": "size",
+          "value_in": "16",
+          "value_out": "16",
+          "type": "IN/OUT",
+          "use_regex": false
+        }
+      ]
+    },
+    {
+      "id": "4 SAFESTORAGE WRITE",
+      "name": "4 SAFESTORAGE WRITE",
+      "user_confirm": false,
+      "is_loop": false,
+      "loop_count": 0,
+      "loop_sleep": 0,
+      "description": "Execute command to write secure storage",
+      "cmd_id": "ISAFESTORAGE_WRITE",
+      "result": "GEDI_RET_OK",
+      "params": [
+        {
+          "name": "fileHandle",
+          "value_in": "&fileHandle2",
+          "value_out": "",
+          "type": "IN",
+          "use_regex": false
+        },
+        {
+          "name": "buffer",
+          "value_in": "AAAAAAAAAAAAAAAABBBBBBBBBBBBBBBB",
+          "value_out": "",
+          "type": "IN",
+          "use_regex": false
+        },
+        {
+          "name": "size",
+          "value_in": "16",
+          "value_out": "16",
+          "type": "IN/OUT",
+          "use_regex": false
+        }
+      ]
+    },
+    {
+      "id": "5 SAFESTORAGE READ",
+      "name": "5 SAFESTORAGE READ",
+      "user_confirm": false,
+      "is_loop": false,
+      "loop_count": 0,
+      "loop_sleep": 0,
+      "description": "Execute command to read secure storage",
+      "cmd_id": "ISAFESTORAGE_READ",
+      "result": "GEDI_RET_OK",
+      "params": [
+        {
+          "name": "filehadle",
+          "value_in": "&fileHandle1",
+          "value_out": "",
+          "type": "IN",
+          "use_regex": false
+        },
+        {
+          "name": "size",
+          "value_in": "16",
+          "value_out": "",
+          "type": "IN",
+          "use_regex": false
+        },
+        {
+          "name": "dataRead",
+          "value_in": "0",
+          "value_out": "6461746120746F206265207361766564",
+          "type": "OUT",
+          "use_regex": false
+        }
+      ]
+    },
+    {
+      "id": "6 SAFESTORAGE READ",
+      "name": "6 SAFESTORAGE READ",
+      "user_confirm": false,
+      "is_loop": false,
+      "loop_count": 0,
+      "loop_sleep": 0,
+      "description": "Execute command to read secure storage",
+      "cmd_id": "ISAFESTORAGE_READ",
+      "result": "GEDI_RET_OK",
+      "params": [
+        {
+          "name": "filehadle",
+          "value_in": "&fileHandle2",
+          "value_out": "",
+          "type": "IN",
+          "use_regex": false
+        },
+        {
+          "name": "size",
+          "value_in": "16",
+          "value_out": "",
+          "type": "IN",
+          "use_regex": false
+        },
+        {
+          "name": "dataRead",
+          "value_in": "0",
+          "value_out": "AAAAAAAAAAAAAAAABBBBBBBBBBBBBBBB",
+          "type": "OUT",
+          "use_regex": false
+        }
+      ]
+    },
+    {
+      "id": "7 SAFESTORAGE CLOSE",
+      "name": "7 SAFESTORAGE CLOSE",
+      "user_confirm": false,
+      "is_loop": false,
+      "loop_count": 0,
+      "loop_sleep": 0,
+      "description": "Execute command to close secure storage",
+      "cmd_id": "ISAFESTORAGE_CLOSE",
+      "result": "GEDI_RET_OK",
+      "params": [
+        {
+          "name": "fileHandle",
+          "value_in": "&fileHandle1",
+          "value_out": "",
+          "type": "IN",
+          "use_regex": false
+        },
+        {
+          "name": "result",
+          "value_in": "",
+          "value_out": "0",
+          "type": "OUT",
+          "use_regex": false
+        }
+      ]
+    },
+    {
+      "id": "8 SAFESTORAGE CLOSE",
+      "name": "8 SAFESTORAGE CLOSE",
+      "user_confirm": false,
+      "is_loop": false,
+      "loop_count": 0,
+      "loop_sleep": 0,
+      "description": "Execute command to close secure storage",
+      "cmd_id": "ISAFESTORAGE_CLOSE",
+      "result": "GEDI_RET_OK",
+      "params": [
+        {
+          "name": "fileHandle",
+          "value_in": "&fileHandle2",
+          "value_out": "",
+          "type": "IN",
+          "use_regex": false
+        },
+        {
+          "name": "result",
+          "value_in": "",
+          "value_out": "0",
+          "type": "OUT",
+          "use_regex": false
+        }
+      ]
+    },
+    {
+      "id": "9 SAFESTORAGE DELETE",
+      "name": "9 SAFESTORAGE DELETE",
+      "user_confirm": false,
+      "is_loop": false,
+      "loop_count": 0,
+      "loop_sleep": 0,
+      "description": "Execute command to delete secure storage",
+      "cmd_id": "ISAFESTORAGE_DELETE",
+      "result": "GEDI_RET_OK",
+      "params": [
+        {
+          "name": "szfileName",
+          "value_in": "fileName1",
+          "value_out": "",
+          "type": "IN",
+          "use_regex": false
+        },
+        {
+          "name": "eStorage",
+          "value_in": "0",
+          "value_out": "0",
+          "type": "IN",
+          "use_regex": false
+        },
+        {
+          "name": "result",
+          "value_in": "",
+          "value_out": "0",
+          "type": "OUT",
+          "use_regex": false
+        }
+      ]
+    },
+    {
+      "id": "10 SAFESTORAGE DELETE",
+      "name": "10 SAFESTORAGE DELETE",
+      "user_confirm": false,
+      "is_loop": false,
+      "loop_count": 0,
+      "loop_sleep": 0,
+      "description": "Execute command to delete secure storage",
+      "cmd_id": "ISAFESTORAGE_DELETE",
+      "result": "GEDI_RET_OK",
+      "params": [
+        {
+          "name": "szfileName",
+          "value_in": "fileName2",
+          "value_out": "",
+          "type": "IN",
+          "use_regex": false
+        },
+        {
+          "name": "eStorage",
+          "value_in": "0",
+          "value_out": "0",
+          "type": "IN",
+          "use_regex": false
+        },
+        {
+          "name": "result",
+          "value_in": "",
+          "value_out": "0",
+          "type": "OUT",
+          "use_regex": false
+        }
+      ]
+    }
+  ]
+}

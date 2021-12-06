@@ -1,0 +1,20 @@
+{
+  "id": "MOBILE_INFO",
+  "name": "MOBILE_INFO.project",
+  "description": "GEDI Compatibility to device",
+  "override_user_confirm": false,
+  "scripts": [
+    {
+      "id": "MOBILE_INFO",
+      "name": "MOBILE_INFO.script",
+      "description": "Script to cover INFO interface's functions",
+      "break_setup": false,
+      "break_message": "",
+      "features": [
+
+        {"path": "features/iinfo.feature.json"}
+
+      ]
+    }
+  ]
+}

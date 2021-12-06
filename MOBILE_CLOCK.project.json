@@ -1,0 +1,20 @@
+{
+  "id": "MOBILE_CLOCK",
+  "name": "MOBILE_CLOCK.project",
+  "description": "GEDI Compatibility to device",
+  "override_user_confirm": false,
+  "scripts": [
+    {
+      "id": "MOBILE_CLOCK",
+      "name": "MOBILE_CLOCK.script",
+      "description": "Script to cover CLOCK interface's functions",
+      "break_setup": false,
+      "break_message": "",
+      "features": [
+
+        {"path": "features/iclock.feature.json"}
+
+      ]
+    }
+  ]
+}

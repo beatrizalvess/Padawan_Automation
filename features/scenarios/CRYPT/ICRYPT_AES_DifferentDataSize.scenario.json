@@ -1,0 +1,90 @@
+{
+  "id": "ICRYPT_AES_InvalidDataSize",
+  "description": "It executes encryption operation to 128-bit AES",
+  "name": "ICRYPT_AES_InvalidDataSize.scenario",
+  "flags": ["SWP", "TEE"],
+  "steps": [
+    {
+      "id": "1-ICRYPT_AES_InvalidDataSize",
+      "name": "1 CRYPT AES",
+      "user_confirm": false,
+      "is_loop": false,
+      "loop_count": 0,
+      "loop_sleep": 0,
+      "description": "Test if there's any error code return for different data size. 16.5 bytes Data.",
+      "cmd_id": "ICRYPT_AES",
+      "result": "GEDI_RET_OK",
+      "params": [
+        {
+          "name": "eOperation",
+          "value_in": "0",
+          "value_out": "0",
+          "type": "IN",
+          "use_regex": false
+        },
+        {
+          "name": "abKey",
+          "value_in": "01234567890123456789012345678901",
+          "value_out": "0",
+          "type": "IN",
+          "use_regex": false
+        },
+        {
+          "name": "abData",
+          "value_in": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB",
+          "value_out": "0",
+          "type": "IN",
+          "use_regex": false
+        },
+        {
+            "name": "abResult",
+            "value_in": "0",
+            "value_out": "A7147776C069A9FE6708EF0617B72AAC1A897944EEBD29A2B2D7DD5D5D423966",
+            "type": "OUT",
+            "use_regex": false
+        }
+      ]
+    },
+    {
+      "id": "2-ICRYPT_AES_InvalidDataSize",
+      "name": "2 CRYPT AES",
+      "user_confirm": false,
+      "is_loop": false,
+      "loop_count": 0,
+      "loop_sleep": 0,
+      "description": "Test if there's any error code return for different data size. 24 bytes Data.",
+      "cmd_id": "ICRYPT_AES",
+      "result": "GEDI_RET_OK",
+      "params": [
+        {
+          "name": "eOperation",
+          "value_in": "0",
+          "value_out": "0",
+          "type": "IN",
+          "use_regex": false
+        },
+        {
+          "name": "abKey",
+          "value_in": "00000000000000000000000000000000",
+          "value_out": "0",
+          "type": "IN",
+          "use_regex": false
+        },
+        {
+          "name": "abData",
+          "value_in": "000000000000000000000000000000000000000000000000",
+          "value_out": "0",
+          "type": "IN",
+          "use_regex": false
+        },
+        {
+            "name": "abResult",
+            "value_in": "0",
+            "value_out": "66E94BD4EF8A2C3B884CFA59CA342B2E66E94BD4EF8A2C3B884CFA59CA342B2E",
+            "type": "OUT",
+            "use_regex": false
+        }
+      ]
+    }
+  ]
+}

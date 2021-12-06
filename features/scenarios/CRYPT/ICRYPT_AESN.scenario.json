@@ -1,0 +1,392 @@
+{
+    "id": "ICRYPT_AESN",
+    "description": "It executes encryption operation to AESN",
+    "name": "ICRYPT_AESN.scenario",
+    "flags": ["SWP", "TEE"],
+    "steps": [
+        {
+            "id": "1_CRYPT_AESN_ENCRYPTION_ECB",
+            "name": "1 CRYPT AESN ENCRYPTION ECB",
+            "user_confirm": false,
+            "is_loop": false,
+            "loop_count": 0,
+            "loop_sleep": 0,
+            "description": "Check AES-256 encryption in ECB",
+            "cmd_id": "ICRYPT_AESN",
+            "result": "GEDI_RET_OK",
+            "params": [
+                {
+                    "name": "eOperation",
+                    "value_in": "0",
+                    "value_out": "0",
+                    "type": "IN",
+                    "use_regex": false
+                },
+                {
+                    "name": "abKey",
+                    "value_in": "0123456789012345678901234567890101234567890123456789012345678901",
+                    "value_out": "0",
+                    "type": "IN",
+                    "use_regex": false
+                },
+                {
+                    "name": "abIV",
+                    "value_in": "",
+                    "value_out": "0",
+                    "type": "IN",
+                    "use_regex": false
+                },
+                {
+                    "name": "abData",
+                    "value_in": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
+                    "value_out": "0",
+                    "type": "IN",
+                    "use_regex": false
+                },
+                {
+                    "name": "abResult",
+                    "value_in": "0",
+                    "value_out": "12AAF4AE2D315AC7E518FC32BE7EC73A791664EC66BCE369A2EA4852578C6686",
+                    "type": "OUT",
+                    "use_regex": false
+                }
+            ]
+        },
+        {
+            "id": "2_CRYPT_AESN_DECRYPTION_ECB",
+            "name": "2 CRYPT AESN DECRYPTION ECB",
+            "user_confirm": false,
+            "is_loop": false,
+            "loop_count": 0,
+            "loop_sleep": 0,
+            "description": "Check AES-256 decryption in ECB",
+            "cmd_id": "ICRYPT_AESN",
+            "result": "GEDI_RET_OK",
+            "params": [
+                {
+                    "name": "eOperation",
+                    "value_in": "1",
+                    "value_out": "0",
+                    "type": "IN",
+                    "use_regex": false
+                },
+                {
+                    "name": "abKey",
+                    "value_in": "0123456789012345678901234567890101234567890123456789012345678901",
+                    "value_out": "0",
+                    "type": "IN",
+                    "use_regex": false
+                },
+                {
+                    "name": "abIV",
+                    "value_in": "",
+                    "value_out": "0",
+                    "type": "IN",
+                    "use_regex": false
+                },
+                {
+                    "name": "abData",
+                    "value_in": "12AAF4AE2D315AC7E518FC32BE7EC73A791664EC66BCE369A2EA4852578C6686",
+                    "value_out": "0",
+                    "type": "IN",
+                    "use_regex": false
+                },
+                {
+                    "name": "abResult",
+                    "value_in": "0",
+                    "value_out": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
+                    "type": "OUT",
+                    "use_regex": false
+                }
+            ]
+        },
+        {
+            "id": "3_CRYPT_AESN_ENCRYPTION_ECB",
+            "name": "3 CRYPT AESN ENCRYPTION ECB",
+            "user_confirm": false,
+            "is_loop": false,
+            "loop_count": 0,
+            "loop_sleep": 0,
+            "description": "Check AES-128 encryption in ECB",
+            "cmd_id": "ICRYPT_AESN",
+            "result": "GEDI_RET_OK",
+            "params": [
+                {
+                    "name": "eOperation",
+                    "value_in": "0",
+                    "value_out": "0",
+                    "type": "IN",
+                    "use_regex": false
+                },
+                {
+                    "name": "abKey",
+                    "value_in": "01234567890123456789012345678901",
+                    "value_out": "0",
+                    "type": "IN",
+                    "use_regex": false
+                },
+                {
+                    "name": "abIV",
+                    "value_in": "",
+                    "value_out": "0",
+                    "type": "IN",
+                    "use_regex": false
+                },
+                {
+                    "name": "abData",
+                    "value_in": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
+                    "value_out": "0",
+                    "type": "IN",
+                    "use_regex": false
+                },
+                {
+                    "name": "abResult",
+                    "value_in": "0",
+                    "value_out": "A7147776C069A9FE6708EF0617B72AAC169ABFD2390199EBB78D7F227818F6C7",
+                    "type": "OUT",
+                    "use_regex": false
+                }
+            ]
+        },
+        {
+            "id": "4_CRYPT_AESN_DECRYPTION_ECB",
+            "name": "4 CRYPT AESN DECRYPTION ECB",
+            "user_confirm": false,
+            "is_loop": false,
+            "loop_count": 0,
+            "loop_sleep": 0,
+            "description": "Check AES-128 decryption in ECB",
+            "cmd_id": "ICRYPT_AESN",
+            "result": "GEDI_RET_OK",
+            "params": [
+                {
+                    "name": "eOperation",
+                    "value_in": "1",
+                    "value_out": "0",
+                    "type": "IN",
+                    "use_regex": false
+                },
+                {
+                    "name": "abKey",
+                    "value_in": "01234567890123456789012345678901",
+                    "value_out": "0",
+                    "type": "IN",
+                    "use_regex": false
+                },
+                {
+                    "name": "abIV",
+                    "value_in": "",
+                    "value_out": "0",
+                    "type": "IN",
+                    "use_regex": false
+                },
+                {
+                    "name": "abData",
+                    "value_in": "A7147776C069A9FE6708EF0617B72AAC169ABFD2390199EBB78D7F227818F6C7",
+                    "value_out": "0",
+                    "type": "IN",
+                    "use_regex": false
+                },
+                {
+                    "name": "abResult",
+                    "value_in": "0",
+                    "value_out": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
+                    "type": "OUT",
+                    "use_regex": false
+                }
+            ]
+        },
+        {
+            "id": "5_CRYPT_AESN_ENCRYPTION_CBC",
+            "name": "5 CRYPT AESN ENCRYPTION CBC",
+            "user_confirm": false,
+            "is_loop": false,
+            "loop_count": 0,
+            "loop_sleep": 0,
+            "description": "Check AES-256 encryption in CBC",
+            "cmd_id": "ICRYPT_AESN",
+            "result": "GEDI_RET_OK",
+            "params": [
+                {
+                    "name": "eOperation",
+                    "value_in": "0",
+                    "value_out": "0",
+                    "type": "IN",
+                    "use_regex": false
+                },
+                {
+                    "name": "abKey",
+                    "value_in": "0123456789012345678901234567890101234567890123456789012345678901",
+                    "value_out": "0",
+                    "type": "IN",
+                    "use_regex": false
+                },
+                {
+                    "name": "abIV",
+                    "value_in": "11111111111111111111111111111111",
+                    "value_out": "0",
+                    "type": "IN",
+                    "use_regex": false
+                },
+                {
+                    "name": "abData",
+                    "value_in": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
+                    "value_out": "0",
+                    "type": "IN",
+                    "use_regex": false
+                },
+                {
+                    "name": "abResult",
+                    "value_in": "0",
+                    "value_out": "791664EC66BCE369A2EA4852578C668638405B66FD41FAA30F941BD1AAAFADB7",
+                    "type": "OUT",
+                    "use_regex": false
+                }
+            ]
+        },
+        {
+            "id": "6_CRYPT_AESN_DECRYPTION_CBC",
+            "name": "6 CRYPT AESN DECRYPTION CBC",
+            "user_confirm": false,
+            "is_loop": false,
+            "loop_count": 0,
+            "loop_sleep": 0,
+            "description": "Check AES-256 decryption in CBC",
+            "cmd_id": "ICRYPT_AESN",
+            "result": "GEDI_RET_OK",
+            "params": [
+                {
+                    "name": "eOperation",
+                    "value_in": "1",
+                    "value_out": "0",
+                    "type": "IN",
+                    "use_regex": false
+                },
+                {
+                    "name": "abKey",
+                    "value_in": "0123456789012345678901234567890101234567890123456789012345678901",
+                    "value_out": "0",
+                    "type": "IN",
+                    "use_regex": false
+                },
+                {
+                    "name": "abIV",
+                    "value_in": "11111111111111111111111111111111",
+                    "value_out": "0",
+                    "type": "IN",
+                    "use_regex": false
+                },
+                {
+                    "name": "abData",
+                    "value_in": "791664EC66BCE369A2EA4852578C668638405B66FD41FAA30F941BD1AAAFADB7",
+                    "value_out": "0",
+                    "type": "IN",
+                    "use_regex": false
+                },
+                {
+                    "name": "abResult",
+                    "value_in": "0",
+                    "value_out": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
+                    "type": "OUT",
+                    "use_regex": false
+                }
+            ]
+        },
+        {
+            "id": "7_CRYPT_AESN_ENCRYPTION_CBC",
+            "name": "7 CRYPT AESN ENCRYPTION CBC",
+            "user_confirm": false,
+            "is_loop": false,
+            "loop_count": 0,
+            "loop_sleep": 0,
+            "description": "Check AES-128 encryption in CBC",
+            "cmd_id": "ICRYPT_AESN",
+            "result": "GEDI_RET_OK",
+            "params": [
+                {
+                    "name": "eOperation",
+                    "value_in": "0",
+                    "value_out": "0",
+                    "type": "IN",
+                    "use_regex": false
+                },
+                {
+                    "name": "abKey",
+                    "value_in": "01234567890123456789012345678901",
+                    "value_out": "0",
+                    "type": "IN",
+                    "use_regex": false
+                },
+                {
+                    "name": "abIV",
+                    "value_in": "11111111111111111111111111111111",
+                    "value_out": "0",
+                    "type": "IN",
+                    "use_regex": false
+                },
+                {
+                    "name": "abData",
+                    "value_in": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
+                    "value_out": "0",
+                    "type": "IN",
+                    "use_regex": false
+                },
+                {
+                    "name": "abResult",
+                    "value_in": "0",
+                    "value_out": "169ABFD2390199EBB78D7F227818F6C702566021B56FDC3D209343E36EE07289",
+                    "type": "OUT",
+                    "use_regex": false
+                }
+            ]
+        },
+        {
+            "id": "8_CRYPT_AESN_DECRYPTION_CBC",
+            "name": "8 CRYPT AESN DECRYPTION CBC",
+            "user_confirm": false,
+            "is_loop": false,
+            "loop_count": 0,
+            "loop_sleep": 0,
+            "description": "Check AES-128 decryption in CBC",
+            "cmd_id": "ICRYPT_AESN",
+            "result": "GEDI_RET_OK",
+            "params": [
+                {
+                    "name": "eOperation",
+                    "value_in": "1",
+                    "value_out": "0",
+                    "type": "IN",
+                    "use_regex": false
+                },
+                {
+                    "name": "abKey",
+                    "value_in": "01234567890123456789012345678901",
+                    "value_out": "0",
+                    "type": "IN",
+                    "use_regex": false
+                },
+                {
+                    "name": "abIV",
+                    "value_in": "11111111111111111111111111111111",
+                    "value_out": "0",
+                    "type": "IN",
+                    "use_regex": false
+                },
+                {
+                    "name": "abData",
+                    "value_in": "169ABFD2390199EBB78D7F227818F6C702566021B56FDC3D209343E36EE07289",
+                    "value_out": "0",
+                    "type": "IN",
+                    "use_regex": false
+                },
+                {
+                    "name": "abResult",
+                    "value_in": "0",
+                    "value_out": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
+                    "type": "OUT",
+                    "use_regex": false
+                }
+            ]
+        }
+    ]
+}

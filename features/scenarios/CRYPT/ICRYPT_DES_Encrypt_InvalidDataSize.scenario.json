@@ -1,0 +1,42 @@
+{
+  "id": "ICRYPT_DES_Encrypt_InvalidDataSize",
+  "description": "It executes encryption operation to DES",
+  "name": "ICRYPT_DES_Encrypt_InvalidDataSize.scenario",
+  "flags": ["SWP", "TEE"],
+  "steps": [
+    {
+      "id": "1-ICRYPT_DES_Encrypt_InvalidDataSize",
+      "name": "1 CRYPT DES",
+      "user_confirm": false,
+      "is_loop": false,
+      "loop_count": 0,
+      "loop_sleep": 0,
+      "description": "Check system behavior with incorrect keys for DES.",
+      "cmd_id": "ICRYPT_DES",
+      "result": "GEDI_RET_CRYPT_ERROR",
+      "params": [
+        {
+          "name": "eOperation",
+          "value_in": "0",
+          "value_out": "0",
+          "type": "IN",
+          "use_regex": false
+        },
+        {
+          "name": "abKey",
+          "value_in": "FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
+          "value_out": "0",
+          "type": "IN",
+          "use_regex": false
+        },
+        {
+          "name": "abData",
+          "value_in": "AAAAAAAAAAAAAAAABBBBBBBBBBBBBBBBFFFFFFFFFFFF",
+          "value_out": "0",
+          "type": "IN",
+          "use_regex": false
+        }
+      ]
+    }
+  ]
+}

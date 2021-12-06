@@ -1,0 +1,42 @@
+{
+  "id": "ICRYPT_AES_InvalidKeySize2",
+  "description": "It executes encryption operation to 128-bit AES",
+  "name": "ICRYPT_AES_InvalidDataSize.scenario",
+  "flags": ["SWP", "TEE"],
+  "steps": [
+    {
+      "id": "1-ICRYPT_AES_InvalidKeySize2",
+      "name": "1 CRYPT AES",
+      "user_confirm": false,
+      "is_loop": false,
+      "loop_count": 0,
+      "loop_sleep": 0,
+      "description": "Test the error code return for invalid key size imput. 16.5 bytes keys.",
+      "cmd_id": "ICRYPT_AES",
+      "result": "GEDI_RET_CRYPT_ERROR",
+      "params": [
+        {
+          "name": "eOperation",
+          "value_in": "0",
+          "value_out": "0",
+          "type": "IN",
+          "use_regex": false
+        },
+        {
+          "name": "abKey",
+          "value_in": "1234567890ABCDEF1234567890ABCDEF1",
+          "value_out": "0",
+          "type": "IN",
+          "use_regex": false
+        },
+        {
+          "name": "abData",
+          "value_in": "12345678901234567890123456789012",
+          "value_out": "0",
+          "type": "IN",
+          "use_regex": false
+        }
+      ]
+    }
+  ]
+}

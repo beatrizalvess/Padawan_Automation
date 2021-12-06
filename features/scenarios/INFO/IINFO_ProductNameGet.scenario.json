@@ -1,0 +1,28 @@
+﻿{
+  "id": "IINFO_ProductNameGet",
+  "description": "Check if the product name is caught",
+  "name": "GEDI_INFO_ProductNameGet",
+  "flags": ["SWP", "TEE"],
+  "steps": [
+    {
+      "id": "1-IINFO_ProductNameGet",
+      "name": "STEP 00 - GEDI INFO PRODUCT NAME GET THE NAME OF THE PRODUCT TESTED",
+      "user_confirm": true,
+      "is_loop": false,
+      "loop_count": 0,
+      "loop_sleep": 0,
+      "description": "It gets the serial number of device",
+      "cmd_id": "IINFO_ProductNameGet",
+      "result": "GEDI_RET_OK",
+      "params": [
+        {
+          "name": "szName",
+          "value_out": ".*",
+          "value_in": "",
+          "type": "OUT",
+          "use_regex": true
+        }
+      ]
+    }
+  ]
+}

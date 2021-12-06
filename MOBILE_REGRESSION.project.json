@@ -1,0 +1,22 @@
+{
+    "id": "MOBILE_FULL_REGRESSION",
+    "name": "MOBILE_FULL_REGRESSION.project",
+    "description": "GEDI Compatibility to device",
+    "override_user_confirm": false,
+    "scripts": [
+        {
+            "id": "MOBILE_FULL_REGRESSION",
+            "name": "MOBILE_FULL_REGRESSION.script",
+            "description": "Script to cover Regression tests",
+            "break_setup": false,
+            "break_message": "",
+            "features": [
+                {"path": "features/iclock.feature.json"},
+                {"path": "features/iinfo.feature.json"},
+                {"path": "features/icrypt.feature.json"},
+                {"path": "features/ikms.feature.json"},
+                {"path": "features/isafestorage.feature.json"}
+            ]
+        }
+    ]
+}

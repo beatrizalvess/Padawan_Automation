@@ -1,0 +1,11 @@
+{
+  "id": "CLOCK",
+  "name": "clock.feature",
+  "description": "Features related to CLOCK",
+  "flags": ["TEE", "SWP"],
+  "scenarios": [
+    {
+      "path": "scenarios/CLOCK/CLOCK_UserClock.scenario.json"
+    }
+  ]
+}

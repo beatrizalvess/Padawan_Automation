@@ -1,0 +1,104 @@
+{
+    "id": "CRYPT.01.SC.00",
+    "name": "GEDI_CRYPT_RSA",
+    "description": "Realiza uma operacao de encryptacao RSA",
+    "is_loop": false,
+    "loop_count": 0,
+    "git_version": {
+        "message": "Your branch is up to date with 'origin/qa'.",
+        "remote_repository": {
+            "url": "git@gitlab.com:itriad-systems/gertec/tap-on-phone/padawan_scripts.git",
+            "username": "thatianne.maruyama",
+            "hash": "29fcf9d740a11dc67857c6d0802904f72152f3b5",
+            "date": "2021-06-28 08:59:27-04:00"
+        },
+        "local_repository": {
+            "path": "D:/Tap on Phone/padawan_scripts",
+            "hash": "29fcf9d740a11dc67857c6d0802904f72152f3b5",
+            "date": "2021-06-28 08:59:27-04:00",
+            "is_updated": true,
+            "is_modified": true
+        }
+    },
+    "start_time": "2021-06-28 16:28:29.337807",
+    "end_time": "2021-06-28 16:28:33.387295",
+    "elapsed_time": "0:00:04.049488",
+    "result": "Fail",
+    "step": [
+        {
+            "id": "CRYPT.01.SC.00.ST.01",
+            "name": "STEP 00 - GEDI CRYPT RSA",
+            "description": "",
+            "cmd_id": "059",
+            "is_loop": false,
+            "loop_count": 1,
+            "loop_sleep": 1,
+            "user_confirm": false,
+            "start_time": "2021-06-28 16:28:29.338808",
+            "end_time": "2021-06-28 16:28:33.387295",
+            "elapsed_time": "0:00:04.048487",
+            "result": "Fail",
+            "expected_result": "GEDI_RET_OK",
+            "params": [
+                {
+                    "name": "abModulus",
+                    "value_in": "BF9EA8BC91D9424DB3FCAC839E48368FEF1A0AAD445AE0165DBDCA673F9022A220A1570A31C491BDAEAFB00DE0FD426BCD68A087BF2AABFFC28467885715354B7D6737EF17A1B6AEEC3AA5D759F68B9902FF8D614AEDF0251A4015348E918C59A6A65CA9AB5A9F90744F8DFF3838C8543BA5271C08EC79D07941629F31BA1791",
+                    "value_out": "0",
+                    "type": "IN",
+                    "use_regex": false,
+                    "value_in_input_manual": false,
+                    "value_out_input_manual": false
+                },
+                {
+                    "name": "uiModulusLen",
+                    "value_in": "128",
+                    "value_out": "0",
+                    "type": "IN",
+                    "use_regex": false,
+                    "value_in_input_manual": false,
+                    "value_out_input_manual": false
+                },
+                {
+                    "name": "abExponent",
+                    "value_in": "17",
+                    "value_out": "0",
+                    "type": "IN",
+                    "use_regex": false,
+                    "value_in_input_manual": false,
+                    "value_out_input_manual": false
+                },
+                {
+                    "name": "uiExponentLen",
+                    "value_in": "1",
+                    "value_out": "0",
+                    "type": "IN",
+                    "use_regex": false,
+                    "value_in_input_manual": false,
+                    "value_out_input_manual": false
+                },
+                {
+                    "name": "abData",
+                    "value_in": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "value_out": "0",
+                    "type": "IN",
+                    "use_regex": false,
+                    "value_in_input_manual": false,
+                    "value_out_input_manual": false
+                },
+                {
+                    "name": "abResult",
+                    "value_in": "0",
+                    "value_out": "3576BE31EB69C037907B2E49F124A89FA72182619E7B8A0043A055F4E826F61DA4E6B9A218A0165CA9C129CFC544F33CB6098453210F3843C63C1863E5FFD5EC24BEAACE6B618C4AAE1EF93D6431F1A648FA6990BD676E0130629FB785BEEECAC4ABFD8DE529F30AA1CA6EE61737509723FCACCB63B522D528A83306B11FF011",
+                    "type": "OUT",
+                    "use_regex": false,
+                    "value_in_input_manual": false,
+                    "value_out_input_manual": false,
+                    "status": "Fail",
+                    "received": "5D841013A3925E9A7A12AF29E09405DC569737E084A720AD3A1E7558875467A7D59F6E112244E0091FCA9DBD8876202F73981FA1F5361A6A6E7980C56F3C910DAEBA0CF7877F04F8560698748AA8B9119AD905E4E15BAB473EE23425D0D380420F8740062F2D8BDD48D5143A23D72BC7BCA395888C649B2170AABAA9641887D9"
+                }
+            ],
+            "execution_detail": "Command sent:  16 30 35 39 30 35 34 33 1D 32 35 36 42 46 39 45 41 38 42 43 39 31 44 39 34 32 34 44 42 33 46 43 41 43 38 33 39 45 34 38 33 36 38 46 45 46 31 41 30 41 41 44 34 34 35 41 45 30 31 36 35 44 42 44 43 41 36 37 33 46 39 30 32 32 41 32 32 30 41 31 35 37 30 41 33 31 43 34 39 31 42 44 41 45 41 46 42 30 30 44 45 30 46 44 34 32 36 42 43 44 36 38 41 30 38 37 42 46 32 41 41 42 46 46 43 32 38 34 36 37 38 38 35 37 31 35 33 35 34 42 37 44 36 37 33 37 45 46 31 37 41 31 42 36 41 45 45 43 33 41 41 35 44 37 35 39 46 36 38 42 39 39 30 32 46 46 38 44 36 31 34 41 45 44 46 30 32 35 31 41 34 30 31 35 33 34 38 45 39 31 38 43 35 39 41 36 41 36 35 43 41 39 41 42 35 41 39 46 39 30 37 34 34 46 38 44 46 46 33 38 33 38 43 38 35 34 33 42 41 35 32 37 31 43 30 38 45 43 37 39 44 30 37 39 34 31 36 32 39 46 33 31 42 41 31 37 39 31 1D 30 30 33 31 32 38 1D 30 30 32 31 37 1D 30 30 31 31 1D 32 35 36 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 1D 30 30 30 1D 17 51 33, response:  16 30 35 39 30 30 30 30 30 32 36 30 1D 32 35 36 35 44 38 34 31 30 31 33 41 33 39 32 35 45 39 41 37 41 31 32 41 46 32 39 45 30 39 34 30 35 44 43 35 36 39 37 33 37 45 30 38 34 41 37 32 30 41 44 33 41 31 45 37 35 35 38 38 37 35 34 36 37 41 37 44 35 39 46 36 45 31 31 32 32 34 34 45 30 30 39 31 46 43 41 39 44 42 44 38 38 37 36 32 30 32 46 37 33 39 38 31 46 41 31 46 35 33 36 31 41 36 41 36 45 37 39 38 30 43 35 36 46 33 43 39 31 30 44 41 45 42 41 30 43 46 37 38 37 37 46 30 34 46 38 35 36 30 36 39 38 37 34 38 41 41 38 42 39 31 31 39 41 44 39 30 35 45 34 45 31 35 42 41 42 34 37 33 45 45 32 33 34 32 35 44 30 44 33 38 30 34 32 30 46 38 37 34 30 30 36 32 46 32 44 38 42 44 44 34 38 44 35 31 34 33 41 32 33 44 37 32 42 43 37 42 43 41 33 39 35 38 38 38 43 36 34 39 42 32 31 37 30 41 41 42 41 41 39 36 34 31 38 38 37 44 39 1D 17 09 F1",
+            "problem_status": "RESULT: FAIL \n\tabModulus IN INPUTED: BF9EA8BC91D9424DB3FCAC839E48368FEF1A0AAD445AE0165DBDCA673F9022A220A1570A31C491BDAEAFB00DE0FD426BCD68A087BF2AABFFC28467885715354B7D6737EF17A1B6AEEC3AA5D759F68B9902FF8D614AEDF0251A4015348E918C59A6A65CA9AB5A9F90744F8DFF3838C8543BA5271C08EC79D07941629F31BA1791\n\tuiModulusLen IN INPUTED: 128\n\tabExponent IN INPUTED: 17\n\tuiExponentLen IN INPUTED: 1\n\tabData IN INPUTED: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\n\tRESPONSE INDEX: 2 \n\tabResult OUT EXPECTED: 3576BE31EB69C037907B2E49F124A89FA72182619E7B8A0043A055F4E826F61DA4E6B9A218A0165CA9C129CFC544F33CB6098453210F3843C63C1863E5FFD5EC24BEAACE6B618C4AAE1EF93D6431F1A648FA6990BD676E0130629FB785BEEECAC4ABFD8DE529F30AA1CA6EE61737509723FCACCB63B522D528A83306B11FF011 \n\tabResult RECEIVED: 5D841013A3925E9A7A12AF29E09405DC569737E084A720AD3A1E7558875467A7D59F6E112244E0091FCA9DBD8876202F73981FA1F5361A6A6E7980C56F3C910DAEBA0CF7877F04F8560698748AA8B9119AD905E4E15BAB473EE23425D0D380420F8740062F2D8BDD48D5143A23D72BC7BCA395888C649B2170AABAA9641887D9\n\n"
+        }
+    ]
+}

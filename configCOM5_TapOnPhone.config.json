@@ -1,0 +1,11 @@
+{
+    "port": "COM5",
+    "baud_rate": "4800",
+    "bytesize": 8,
+    "timeout": 1.0,
+    "remote_git_url": "git@gitlab.com:itriad-systems/gertec/tap-on-phone/padawan_scripts.git",
+    "remote_branch": "qa",
+    "local_repo_path": "D:/Tap on Phone/padawan_scripts",
+    "username": "thatianne.maruyama",
+    "password": "JttNoS98AmXganOQ4UBq8DCB"
+}

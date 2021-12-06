@@ -1,0 +1,26 @@
+{
+  "id": "KMS",
+  "name": "kms.feature",
+  "description": "Features related to KMS",
+  "flags": ["TEE", "SWP"],
+  "scenarios": [
+    {"path": "scenarios/KMS/CapturePin.scenario.json"},
+    {"path": "scenarios/KMS/CapturePin_GetPinBlock.scenario.json"},
+    {"path": "scenarios/KMS/CapturePin_GetPinBlock_1024.scenario.json"},
+    {"path": "scenarios/KMS/CapturePin_GetPinBlock_PAN5502.scenario.json"},
+    {"path": "scenarios/KMS/GetPinBlock_PAN_8Digitos.scenario.json"},
+    {"path": "scenarios/KMS/keyPresenceTest.scenario.json"},
+    {"path": "scenarios/KMS/keyPresenceTest_1min.scenario.json"},
+    {"path": "scenarios/KMS/SEK128bitsAES.scenario.json"},
+    {"path": "scenarios/KMS/SEK256bitsAES.scenario.json"},
+    {"path": "scenarios/KMS/SEK384bitsAES.scenario.json"},
+    {"path": "scenarios/KMS/SEK512bitsAES.scenario.json"},
+    {"path": "scenarios/KMS/SEK128bits3DES.scenario.json"},
+    {"path": "scenarios/KMS/SEK256bits3DES.scenario.json"},
+    {"path": "scenarios/KMS/SaveEncryptedKeyAndEncryptData.scenario.json"},
+    {"path": "scenarios/KMS/SaveEncryptedKeyAndEncryptData_1024key.scenario.json"},
+    {"path": "scenarios/KMS/SaveEncryptedKeyAndEncryptData_2048Key.scenario.json"},
+    {"path": "scenarios/KMS/SaveEncryptedKeyAndEncryptData_3072Key.scenario.json"},
+    {"path": "scenarios/KMS/SaveEncryptedKeyAndEncryptData_4096Key.scenario.json"}
+  ]
+}

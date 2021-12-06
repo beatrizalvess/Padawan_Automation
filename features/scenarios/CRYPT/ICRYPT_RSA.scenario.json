@@ -1,0 +1,228 @@
+{
+    "id": "ICRYPT_RSA",
+    "description": "Realiza uma operacao de encryptacao RSA",
+    "name": "GEDI_CRYPT_RSA",
+    "flags": ["SWP", "TEE"],
+    "steps": [
+        {
+            "id": "1-ICRYPT_RSA",
+            "name": "STEP 01 - GEDI CRYPT RSA",
+            "description": "RSA ENCRYPT WITH 256-BIT MODULUS",
+            "user_confirm": false,
+            "is_loop": false,
+            "loop_count": 0,
+            "loop_sleep": 0,
+            "cmd_id": "ICRYPT_RSA",
+            "result": "GEDI_RET_OK",
+            "params": [
+                {
+                    "name": "abModulus",
+                    "value_in": "ED4D32E981C87974187C38F72908AD33B9E7D7B0A17D112CE338FC89B61E5CF3F37E2AF71CF0076E9CA841256D4740549E940D551C57EBF7255E5CBF086AFE1FE9B00408DF273AB8B17FA36CF80295F10766ECF6E4B0F26AD750762F3029CA9B598C8D43F0BE5A6C41F75C4DEACE9D55D5E3A7D51F44F96E7A68A377C03AA129",
+                    "value_out": "0",
+                    "type": "IN",
+                    "use_regex": false
+                },
+                {
+                    "name": "uiModulusLen",
+                    "value_in": "128",
+                    "value_out": "0",
+                    "type": "IN",
+                    "use_regex": false
+                },
+                {
+                    "name": "abExponent",
+                    "value_in": "17",
+                    "value_out": "0",
+                    "type": "IN",
+                    "use_regex": false
+                },
+                {
+                    "name": "uiExponentLen",
+                    "value_in": "1",
+                    "value_out": "0",
+                    "type": "IN",
+                    "use_regex": false
+                },
+                {
+                    "name": "abData",
+                    "value_in": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "value_out": "0",
+                    "type": "IN",
+                    "use_regex": false
+                },
+                {
+                    "name": "abResult",
+                    "value_in": "0",
+                    "value_out": "[0-9A-F]*",
+                    "type": "OUT",
+                    "use_regex": true
+                }
+            ]
+        },
+        {
+            "id": "2-ICRYPT_RSA",
+            "name": "STEP 02 - GEDI CRYPT RSA",
+            "description": "RSA ENCRYPT WITH 512-BIT MODULUS",
+            "user_confirm": false,
+            "is_loop": false,
+            "loop_count": 0,
+            "loop_sleep": 0,
+            "cmd_id": "ICRYPT_RSA",
+            "result": "GEDI_RET_OK",
+            "params": [
+                {
+                    "name": "abModulus",
+                    "value_in": "B92C1A9DFF2BF120B8D36E23F8B09F6313A40BBB9C2AC795D047FAF882E8CBC4F619009E5FD4DFAEB4CC52636846FCDD3A5CEB474EE0D5C6F7D6815C4D283F7E182B765B3D6CD0D9D98D58BB364C53B65D82075A53B19915EA9624FFC464A6978AF9ABAE03691FE85708957918C60ED082BDE519217C232633699B7E4DFB9096AE8BF97BE371AF2E5421B209D27AC78AA7DBC64A15F3AD3C99FDACE0790FCAFACA0424DEFFDBFF9AA3EFD032E47AA6EC00F7E8064F6DC39DD258F8C6452FEBC31734FFE9B61693C7411104E7D46B805CF5F612112C550B10EE65E8D6E13DE7A872211352FACFC2DD70512D974DB9371AAEFF7477AE31202028AA94C23AF382AD",
+                    "value_out": "0",
+                    "type": "IN",
+                    "use_regex": false
+                },
+                {
+                    "name": "uiModulusLen",
+                    "value_in": "256",
+                    "value_out": "0",
+                    "type": "IN",
+                    "use_regex": false
+                },
+                {
+                    "name": "abExponent",
+                    "value_in": "17",
+                    "value_out": "0",
+                    "type": "IN",
+                    "use_regex": false
+                },
+                {
+                    "name": "uiExponentLen",
+                    "value_in": "1",
+                    "value_out": "0",
+                    "type": "IN",
+                    "use_regex": false
+                },
+                {
+                    "name": "abData",
+                    "value_in": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "value_out": "0",
+                    "type": "IN",
+                    "use_regex": false
+                },
+                {
+                    "name": "abResult",
+                    "value_in": "0",
+                    "value_out": "[0-9A-F]*",
+                    "type": "OUT",
+                    "use_regex": true
+                }
+            ]
+        },
+        {
+            "id": "3-ICRYPT_RSA",
+            "name": "STEP 03 - GEDI CRYPT RSA",
+            "description": "RSA ENCRYPT WITH 768-BIT MODULUS",
+            "user_confirm": false,
+            "is_loop": false,
+            "loop_count": 0,
+            "loop_sleep": 0,
+            "cmd_id": "ICRYPT_RSA",
+            "result": "GEDI_RET_OK",
+            "params": [
+                {
+                    "name": "abModulus",
+                    "value_in": "E58EC5369C2B8D2F1D09B12B919192856834F24D641B0658E261E7EA84301624CE1F9C0A9604E6928AABCBA3346305A8C83DCB4680CEB77D33B5B46870367640D9C296A4ED8124614297546B313E606088C088EAED0B48F8454FA099D206DFB375F10550FBA6C9CE82AD01E579BF42867492B6CFB7524F19DF2EDA144A8648BCABB540DFD6F429D24EFCA21C7DBC1DAE809E6893EA5B12915E8B0B38D508BA0B78AC3D1649EDC138DA6A7C26D7CE98C8EB3F0670BC21BCB291644BF97BBA1424A7E5ED8A443009B5F464640C986EAC2AFAB517DFAFC865B55CE926110DB22E5E14A58A168B5639A6ED156F87463970E15B955ABA0B475BEB610B9BA6D978EF77892E7EC4BA5164704EA7B82EFF45349DF5DA7114F39128C167112660FC710F3705AFCEA53346469FBE74543D89C5EFB2F72F469825368250D2834A02698F123153596746A21CA4C0CAFF50125D102FAD67BDFBCD427C85FDCEF3D86CEDC821811B644BB2B60EAB1AD6B4BFC45A5B24F242B797B852D808171CC65E9ED0139E05",
+                    "value_out": "0",
+                    "type": "IN",
+                    "use_regex": false
+                },
+                {
+                    "name": "uiModulusLen",
+                    "value_in": "384",
+                    "value_out": "0",
+                    "type": "IN",
+                    "use_regex": false
+                },
+                {
+                    "name": "abExponent",
+                    "value_in": "17",
+                    "value_out": "0",
+                    "type": "IN",
+                    "use_regex": false
+                },
+                {
+                    "name": "uiExponentLen",
+                    "value_in": "1",
+                    "value_out": "0",
+                    "type": "IN",
+                    "use_regex": false
+                },
+                {
+                    "name": "abData",
+                    "value_in": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "value_out": "0",
+                    "type": "IN",
+                    "use_regex": false
+                },
+                {
+                    "name": "abResult",
+                    "value_in": "0",
+                    "value_out": "[0-9A-F]*",
+                    "type": "OUT",
+                    "use_regex": true
+                }
+            ]
+        },
+        {
+            "id": "4-ICRYPT_RSA",
+            "name": "STEP 04 - GEDI CRYPT RSA",
+            "description": "RSA ENCRYPT WITH 1024-BIT MODULUS",
+            "user_confirm": false,
+            "is_loop": false,
+            "loop_count": 0,
+            "loop_sleep": 0,
+            "cmd_id": "ICRYPT_RSA",
+            "result": "GEDI_RET_OK",
+            "params": [
+                {
+                    "name": "abModulus",
+                    "value_in": "9B7DEA6DB5F530F00F244FF02805FE9198EA1B286C747B8F82E9300E630F732BCA3531AF200C39781A9F707EFE787FF8510D8014D17EBEAC85CCBABF7C4D3E45B0E32642D893DF2EE911B5A1652251659CDA41BD0AF852185A8E0ED6F273F2DEAB7B7057C1540B28FA7647052B7AC4A00C945619ED520AB548F99F623BA9727176128CDB4590021062535B45C4D445A49119F65C7C22BB84C691BEFAC0A4BDCE655BA2E64FB741787949EABB71F8608E9C883BB3AB554009A1A24DE92E356A1C7634ADBB0DC04EB9F443594DC7D10AAA9BFBF510F023844FE84E6182ECA131DA326DE8A9F900742770C81952D19B040417CAA476A81797594674D60CADAEDE42CAD5CAD710C00368F604B39B96E3C4E84C7778E0F85014CA54E7C1EF27C6EF6EF6BE50322EC741C12E6B6D847C501574A9C646867381EA7217A1FB0B92283779D8BD6CD6C29341F0A71F0627AE5B23927C3E3836B7E95B01EDD4AD9679A27BEB230B325D0B8772B64F34BEE0A5A2BCC81B995B02B78756E4E27B367802FA1C7BDFD883EBC9DC1656A8433BB17C2C66B76F7A5FCBC463A8DA7EE910271B6FC562466D637D6E8EAA4571C287371D0893AE82B4CA646E721A8D974D61CA0C0749D0CBB04CA18D6871BB620486B7B2383D5B1379A239EF194047D24D030A13D137F2F336747AF5921B5964C7D0B04BD287939A08CB7850C1E4B6DA8D4AE21F853323",
+                    "value_out": "0",
+                    "type": "IN",
+                    "use_regex": false
+                },
+                {
+                    "name": "uiModulusLen",
+                    "value_in": "512",
+                    "value_out": "0",
+                    "type": "IN",
+                    "use_regex": false
+                },
+                {
+                    "name": "abExponent",
+                    "value_in": "17",
+                    "value_out": "0",
+                    "type": "IN",
+                    "use_regex": false
+                },
+                {
+                    "name": "uiExponentLen",
+                    "value_in": "1",
+                    "value_out": "0",
+                    "type": "IN",
+                    "use_regex": false
+                },
+                {
+                    "name": "abData",
+                    "value_in": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "value_out": "0",
+                    "type": "IN",
+                    "use_regex": false
+                },
+                {
+                    "name": "abResult",
+                    "value_in": "0",
+                    "value_out": "[0-9A-F]*",
+                    "type": "OUT",
+                    "use_regex": true
+                }
+            ]
+        }
+    ]
+}
